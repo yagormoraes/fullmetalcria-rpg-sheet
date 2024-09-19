@@ -1,6 +1,6 @@
 export default function Banner() {
     return (
-        <div className=" relative flex justify-center items-center overflow-hidden h-80 m-5">
+        <div className="relative flex justify-center items-center overflow-hidden h-80 mx-5">
             <img
                 className="opacity-70 rounded-lg object-cover object-center w-full h-full"
                 src="/assets/banner-image.png"

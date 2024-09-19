@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Banner from "@/components/banner";
+import WarningPlayers from "@/components/warning-players";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,9 +14,11 @@ export default function Home() {
     <div className={darkMode ? "dark" : ""}>
       <Header onToggleDarkMode={toggleDarkMode} />
       <main className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
-        <Banner/>
+        <div className="h-5 bg-white dark:bg-gray-900"></div>
+        <Banner />
+        <WarningPlayers/>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
