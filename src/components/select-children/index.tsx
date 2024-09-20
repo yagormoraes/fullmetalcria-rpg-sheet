@@ -15,6 +15,7 @@ export default function SelectChildren() {
                 <Card img="/assets/pivete-blogueira.png" overlayText="Blogueira"/>
                 <Card img="/assets/pivete-esforcado.png" overlayText="Esforçado"/>
                 <Card img="/assets/pivete-playboy.png" overlayText="Playboy"/>
+                
             </div>
 
         </div>
