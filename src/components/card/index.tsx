@@ -2,10 +2,9 @@ type CardProps = {
     img: string;
     altText?: string;
     overlayText?: string;
-    backText?: string;
 };
 
-export default function Card({ img, altText, overlayText, backText }: CardProps) {
+export default function Card({ img, altText, overlayText }: CardProps) {
     return (
         <div className="group h-40 w-40 min-w-[10rem] ">
             <div className="relative h-full w-full rounded-xl shadow-xl">
