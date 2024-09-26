@@ -19,7 +19,7 @@ export default function InputBox({ label, linkedFor, value, placeholder, disable
     }
     
     return (
-        <div className="flex px-2 flex-col py-1">
+        <div className="flex flex-col py-1">
             <label className="text-white font-semibold" htmlFor={linkedFor}>{label}</label>
             <textarea disabled={disable} name={linkedFor} onChange={(e) => onChangeValue(e.target.value)} className={`rounded-lg resize-none ${height} disabled:bg-orange-100`} id={linkedFor} value={value} placeholder={placeholder} />
         </div>
