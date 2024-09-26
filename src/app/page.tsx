@@ -8,6 +8,11 @@ import SelectChildren from "@/components/select-children";
 import InputBox from "@/components/inputBox";
 import { Children } from "@/types/children";
 import ChildrenInputs from "@/components/children-inputs";
+import SelectBox from "@/components/select-box";
+
+const personalities = ["Astuto","Bruto", "Calmo", "Tímido", "Humilde", "Cuidadosos"]
+const classes = ["Shoto", "Shooter", "Beast", "Lancer"]
+const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"]
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,6 +37,16 @@ export default function Home() {
         <WarningPlayers />
         <SelectChildren onSelectChildren={handleChildren} />
         <ChildrenInputs children={children} />
+        <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
+          <span className="text-white text-2xl font-bold">Dados do Cria</span>
+          <div className="grid grid-cols-4 gap-3">
+            <InputBox label="Nome:" linkedFor="robot-name" height="h-6" />
+            <SelectBox label="Personalidade:" data={personalities} linkedFor="robot-personality"/>
+            <SelectBox label="Chassi:" data={classes} linkedFor="robot-class"/>
+            <SelectBox label="Tipo:" data={types} linkedFor="robot-type"/>
+          </div>
+          
+        </div>
         <div className="h-2" />
       </main>
       <Footer />
