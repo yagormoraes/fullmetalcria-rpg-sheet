@@ -2,17 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.hexagon-wrapper {
-    @apply relative w-40 h-40;
-}
-
 .hexagon-border {
-    @apply bg-red-500 w-full h-full absolute top-0 left-0;
+    @apply bg-gray-600 flex items-center justify-center w-full h-full;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .hexagon-inner {
-    @apply bg-blue-500 w-full h-full flex items-center justify-center absolute top-0 left-0;
+    @apply bg-slate-200 flex items-center justify-center w-[90%] h-[90%];
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
