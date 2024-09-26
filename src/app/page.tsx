@@ -10,10 +10,12 @@ import { Children } from "@/types/children";
 import ChildrenInputs from "@/components/children-inputs";
 import SelectBox from "@/components/select-box";
 import HexagonInput from "@/components/hexagon-input";
+import techs from "../data/techniques.json"
 
 const personalities = ["Astuto", "Bruto", "Calmo", "Tímido", "Humilde", "Cuidadosos"]
 const classes = ["Shoto", "Shooter", "Beast", "Lancer"]
 const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"]
+const techNames = techs.map((tech) => tech.name)
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,6 +56,16 @@ export default function Home() {
             <HexagonInput label="Velocidade" />
             <HexagonInput label="Carapaça" />
             <HexagonInput label="Bateria" />
+          </div>
+          <div className="mt-2 grid grid-cols-2 gap-3">
+            <div className="bg-stone-400 rounded-lg">
+              <span>Peças</span> 
+            </div>
+            <div className="bg-stone-400 rounded-lg">
+              <span>Técnicas</span>
+              <div className="bg-white"></div>
+               <SelectBox label="Lista de técnicas:" data={techNames} linkedFor="robot-list-techs" />
+            </div>
           </div>
 
         </div>

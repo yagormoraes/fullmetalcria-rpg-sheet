@@ -3,7 +3,7 @@ type SelectPropsProps = {
     label: string;
     value?: string;
     linkedFor?: string;
-    data: string[]
+    data: any[]
 };
 
 export default function SelectBox({ label, linkedFor, data }: SelectPropsProps) {
