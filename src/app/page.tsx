@@ -46,6 +46,7 @@ export default function Home() {
             <SelectBox label="Chassi:" data={classes} linkedFor="robot-class" />
             <SelectBox label="Tipo:" data={types} linkedFor="robot-type" />
           </div>
+          <div className="h-2" />
           <div className="grid grid-cols-3 gap-3">
             <HexagonInput label="Durabilidade"/>
             <HexagonInput label="Dano"/>

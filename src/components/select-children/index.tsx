@@ -1,5 +1,5 @@
 import Card from "../card";
-import data from "../../data/data.json"
+import data from "../../data/children.json"
 
 type SelectChildrenProps = {
     onSelectChildren: (children: any) => void
