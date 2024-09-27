@@ -11,11 +11,16 @@ import ChildrenInputs from "@/components/children-inputs";
 import SelectBox from "@/components/select-box";
 import HexagonInput from "@/components/hexagon-input";
 import techs from "../data/techniques.json"
+import parts from "../data/parts.json"
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
 
+const animatedComponents = makeAnimated()
 const personalities = ["Astuto", "Bruto", "Calmo", "Tímido", "Humilde", "Cuidadosos"]
 const classes = ["Shoto", "Shooter", "Beast", "Lancer"]
 const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"]
-const techNames = techs.map((tech) => tech.name)
+const techSelect = techs.map((tech) => ({ value: tech.name, label: tech.name }));
+const partSelect = parts.map((part) => ({value: part.name, label: part.name}))
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -50,21 +55,21 @@ export default function Home() {
           </div>
           <div className="h-2" />
           <div className="grid grid-cols-3 gap-3">
-            <HexagonInput label="Durabilidade"/>
-            <HexagonInput label="Dano"/>
-            <HexagonInput label="Mira"/>
+            <HexagonInput label="Durabilidade" />
+            <HexagonInput label="Dano" />
+            <HexagonInput label="Mira" />
             <HexagonInput label="Velocidade" />
             <HexagonInput label="Carapaça" />
             <HexagonInput label="Bateria" />
           </div>
           <div className="mt-2 grid grid-cols-2 gap-3">
             <div className="bg-stone-400 rounded-lg">
-              <span>Peças</span> 
+              <span className="text-white font-semibold">Peças</span>
+              <Select placeholder="Selecione as peças" components={animatedComponents} closeMenuOnSelect={false} isMulti options={partSelect}/>
             </div>
             <div className="bg-stone-400 rounded-lg">
-              <span>Técnicas</span>
-              <div className="bg-white"></div>
-               <SelectBox label="Lista de técnicas:" data={techNames} linkedFor="robot-list-techs" />
+              <span className="text-white font-semibold">Técnicas</span>
+              <Select placeholder="Selecione as técnicas" components={animatedComponents} closeMenuOnSelect={false} isMulti options={techSelect}/>
             </div>
           </div>
 
