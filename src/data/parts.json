@@ -192,7 +192,7 @@
         "name": "Marreta",
         "type": "Lancer",
         "location":"Parte superior",
-        "prerequisite": {"class": "Lancer"},
+        "prerequisite": {"class": ["Lancer"]},
         "memoryCost": "2",
         "upgrade":{
             "mira":"1",

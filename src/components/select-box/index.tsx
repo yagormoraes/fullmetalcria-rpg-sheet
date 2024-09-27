@@ -8,18 +8,22 @@ type SelectPropsProps = {
     onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 };
 
-export default function SelectBox({ label, linkedFor, data, placeholder, onChange }: SelectPropsProps) {
+export default function SelectBox({ label, linkedFor, data, placeholder, onChange, value }: SelectPropsProps) {
     return (
         <div className="flex flex-col py-1">
             <label className="text-white font-semibold" htmlFor={linkedFor}>{label}</label>
-            <select onChange={onChange} className="rounded-lg" name={linkedFor} id={linkedFor}>
-                <option value="" disabled selected>{placeholder}</option>
-                {data.map((viewData) => {
-                    return (
-                        <option value={viewData.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}>{viewData}</option>
-                    )
-                })}
+            <select
+                onChange={onChange}
+                value={value}
+                className="rounded-lg"
+                name={linkedFor}
+                id={linkedFor}
+            >
+                <option value="" disabled>{placeholder}</option>
+                {data.map((viewData) => (
+                    <option key={viewData} value={viewData}>{viewData}</option> // Atribui o valor correto a cada option
+                ))}
             </select>
         </div>
-    )
+    );
 }

@@ -1,23 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HexagonInput from "../hexagon-input";
 import SelectBox from "../select-box";
 import robotClasses from "../../data/robot-class.json";
 import robotPersonalities from "../../data/personalities.json";
 import InputBox from '../inputBox';
-import Select from 'react-select'
+import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import techs from "../../data/techniques.json"
-import parts from "../../data/parts.json"
+import techs from "../../data/techniques.json";
+import parts from "../../data/parts.json";
 
-const animatedComponents = makeAnimated()
+const animatedComponents = makeAnimated();
 
-const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"]
-const ranks = ["Nulo", "Latão", "Bronze", "Prata", "Ouro", "Full Metal"]
+const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"];
+const ranks = ["Nulo", "Latão", "Bronze", "Prata", "Ouro", "Full Metal"];
+
 const techSelect = techs.map((tech) => ({ value: tech.name, label: tech.name }));
-const partSelect = parts.map((part) => ({value: part.name, label: part.name}))
-
+const partSelect = parts.map((part) => ({ value: part.name, label: part.name }))
 
 export default function RobotInputs() {
+    const [filter, setFilter] = useState({
+        class: "",
+        type: ""
+    });
     const [baseHexagonValues, setBaseHexagonValues] = useState({
         durabilidade: 0,
         mira: 0,
@@ -36,30 +40,67 @@ export default function RobotInputs() {
         bateria: 0
     });
 
-    const [name, setName] = useState("")
-    const [description, setDescription] = useState("")
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [filteredParts, setFilteredParts] = useState<any>([]);
+    const [filteredTechniques, setFilteredTechniques] = useState<any>([]);
+
+    useEffect(() => {
+        const filteredParts = parts.filter((part) => {
+            const hasNoPrerequisite = !part.prerequisite || Object.keys(part.prerequisite).length === 0;
+            const matchesPrerequisite = part.prerequisite?.class.includes(filter.class);
+            return hasNoPrerequisite || matchesPrerequisite;
+        });
+
+        const filterNoRequireRequisite = techs.filter((tech) => !tech.prerequisite)
+
+        const filterRequireClassRequisite = techs.filter(technique => {
+            const classMatch = technique?.prerequisite?.class ? technique.prerequisite.class.includes(filter.class) : false;
+            return classMatch
+        });
+
+        const filterRequireTypeRequisite = filterRequireClassRequisite.filter((technique) => {
+            const typeMatch = technique?.prerequisite?.type ?  !technique.prerequisite.type.includes(filter.type) : false;
+            return typeMatch 
+        })
+
+        const otherFilteredTechniques = filterRequireClassRequisite.filter(
+            (technique) => !filterRequireTypeRequisite.includes(technique)
+        );
+        const filteredTechniques = [...filterNoRequireRequisite, ...otherFilteredTechniques]
+
+        setFilteredParts(filteredParts);
+        setFilteredTechniques(filteredTechniques);
+    }, [filter.class, filter.type]);
+
 
     const handleClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedClass = robotClasses.find(
-            (rc) => rc.name.toLowerCase() === event.target.value
+            (rc) => rc.name === event.target.value
         );
-
+    
         if (selectedClass) {
-            // Set both base values and hexagon values to the class's status
-            setName(selectedClass.name)
-            setDescription(selectedClass.description)
+            setName(selectedClass.name);
+            setDescription(selectedClass.description);
             setBaseHexagonValues(selectedClass.status);
             setHexagonValues(selectedClass.status);
+            setFilter((prev) => ({ ...prev, class: selectedClass.name }));
         }
+    };
+    
+
+    const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedType = event.target.value;
+        setFilter((prev) => ({ ...prev, type: selectedType }));
     };
 
     const handlePersonalityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedPersonality = robotPersonalities.find(
-            (rp) => rp.name.toLowerCase() === event.target.value
+            (rp) => rp.name.toLowerCase() === event.target.value.toLowerCase()
         );
-
+    
         if (selectedPersonality) {
-            // Reset to base values first, then apply personality modifiers
+            // Calcular os novos valores com base nos valores baseHexagonValues
             setHexagonValues({
                 durabilidade: baseHexagonValues.durabilidade + selectedPersonality.status.durabilidade,
                 mira: baseHexagonValues.mira + selectedPersonality.status.mira,
@@ -70,6 +111,9 @@ export default function RobotInputs() {
             });
         }
     };
+    
+    
+    
 
     const handleHexagonValueChange = (attribute: string, newValue: number) => {
         setHexagonValues((prevValues) => ({
@@ -89,6 +133,7 @@ export default function RobotInputs() {
                     placeholder="Selecione o chassi"
                     linkedFor="robot-class"
                     onChange={handleClassChange}
+                    value={filter.class}
                 />
                 <SelectBox
                     label="Personalidade:"
@@ -97,7 +142,7 @@ export default function RobotInputs() {
                     linkedFor="robot-personality"
                     onChange={handlePersonalityChange}
                 />
-                <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" />
+                <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" onChange={handleTypeChange} />
                 <SelectBox label="Rank:" data={ranks} placeholder="Qual seu rank?" linkedFor="robot-rank" />
             </div>
             <div className='text-white'>
@@ -140,14 +185,13 @@ export default function RobotInputs() {
                 <div className="mt-2 grid grid-cols-2 gap-3">
                     <div className="bg-stone-400 rounded-lg">
                         <span className="text-white font-semibold">Peças</span>
-                        <Select placeholder="Selecione as peças" components={animatedComponents} closeMenuOnSelect={false} isMulti options={partSelect} />
+                        <Select placeholder="Selecione as peças" components={animatedComponents} closeMenuOnSelect={false} isMulti options={filteredParts.map((part: { name: any; }) => ({ value: part.name, label: part.name }))} />
                     </div>
                     <div className="bg-stone-400 rounded-lg">
                         <span className="text-white font-semibold">Técnicas</span>
-                        <Select placeholder="Selecione as técnicas" components={animatedComponents} closeMenuOnSelect={false} isMulti options={techSelect} />
+                        <Select placeholder="Selecione as técnicas" components={animatedComponents} closeMenuOnSelect={false} isMulti options={filteredTechniques.map((tech: { name: any; }) => ({ value: tech.name, label: tech.name }))} />
                     </div>
                 </div>
-
             </div>
         </div>
     );
