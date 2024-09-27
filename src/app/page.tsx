@@ -1,30 +1,20 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Banner from "@/components/banner";
 import WarningPlayers from "@/components/warning-players";
 import SelectChildren from "@/components/select-children";
-import InputBox from "@/components/inputBox";
 import { Children } from "@/types/children";
 import ChildrenInputs from "@/components/children-inputs";
-import SelectBox from "@/components/select-box";
-import HexagonInput from "@/components/hexagon-input";
-import techs from "../data/techniques.json"
-import parts from "../data/parts.json"
-import Select from 'react-select'
-import makeAnimated from 'react-select/animated';
+import { Robot } from "@/types/robot";
+import RobotInputs from "@/components/robot-inputs";
 
-const animatedComponents = makeAnimated()
-const personalities = ["Astuto", "Bruto", "Calmo", "Tímido", "Humilde", "Cuidadosos"]
-const classes = ["Shoto", "Shooter", "Beast", "Lancer"]
-const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"]
-const techSelect = techs.map((tech) => ({ value: tech.name, label: tech.name }));
-const partSelect = parts.map((part) => ({value: part.name, label: part.name}))
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [children, setChildren] = useState<Children | null>(null);
+
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
@@ -41,35 +31,7 @@ export default function Home() {
         <WarningPlayers />
         <SelectChildren onSelectChildren={handleChildren} />
         <ChildrenInputs children={children} />
-        <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
-          <span className="text-white text-2xl font-bold">Dados do Cria</span>
-          <div className="grid grid-cols-4 gap-3">
-            <InputBox label="Nome:" linkedFor="robot-name" height="h-6" />
-            <SelectBox label="Personalidade:" data={personalities} placeholder="Selecione a personalidade" linkedFor="robot-personality" />
-            <SelectBox label="Chassi:" data={classes} placeholder="Selecione o chassi" linkedFor="robot-class" />
-            <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" />
-          </div>
-          <div className="h-2" />
-          <div className="grid grid-cols-3 gap-3">
-            <HexagonInput label="Durabilidade" />
-            <HexagonInput label="Dano" />
-            <HexagonInput label="Mira" />
-            <HexagonInput label="Velocidade" />
-            <HexagonInput label="Carapaça" />
-            <HexagonInput label="Bateria" />
-          </div>
-          <div className="mt-2 grid grid-cols-2 gap-3">
-            <div className="bg-stone-400 rounded-lg">
-              <span className="text-white font-semibold">Peças</span>
-              <Select placeholder="Selecione as peças" components={animatedComponents} closeMenuOnSelect={false} isMulti options={partSelect}/>
-            </div>
-            <div className="bg-stone-400 rounded-lg">
-              <span className="text-white font-semibold">Técnicas</span>
-              <Select placeholder="Selecione as técnicas" components={animatedComponents} closeMenuOnSelect={false} isMulti options={techSelect}/>
-            </div>
-          </div>
-
-        </div>
+        <RobotInputs/>
         <div className="h-2" />
       </main>
       <Footer />

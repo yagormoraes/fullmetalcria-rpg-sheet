@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Shoto",
+        "description": "Por sua natureza equilibrada, Shotos podem distribuir 2 pontos em quaisquer atributos que quiserem.",
+        "status": {
+            "durabilidade": 14,
+            "mira": 3,
+            "velocidade": 3,
+            "carapaca": 3,
+            "dano": 3,
+            "bateria": 5
+        }
+    },{
+        "name": "Shooter",
+        "description": "Shooters são focados em causar dano e em serem velozes. Eles podem distribuir 2 pontos entre os atributos Mira, Velocidade e Dano.",
+        "status": {
+            "durabilidade": 11,
+            "mira": 4,
+            "velocidade": 3,
+            "carapaca": 1,
+            "dano": 3,
+            "bateria": 6
+        }
+    },{
+        "name": "Beast",
+        "description":"Crias do tipo Beast recebem 2 pontos para distribuir entre Durabilidade, Dano ou Carapaça.",
+        "status": {
+            "durabilidade": 15,
+            "mira": 4,
+            "velocidade": 3,
+            "carapaca": 3,
+            "dano": 2,
+            "bateria": 5
+        }
+    },{
+        "name": "Lancer",
+        "description":"Lancers recebem 2 pontos para distribuir em qualquer atributo, exceto em Dano.",
+        "status": {
+            "durabilidade": 13,
+            "mira": 3,
+            "velocidade": 3,
+            "carapaca": 3,
+            "dano": 1,
+            "bateria": 6
+        }
+    }
+]

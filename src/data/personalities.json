@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Astuto",
+        "description": "Crias de natureza astuta são planejadores e metódicos.",
+        "status": {
+            "durabilidade": 0,
+            "mira": 1,
+            "velocidade": 0,
+            "carapaca": -1,
+            "dano": 0,
+            "bateria": 0
+        }
+    },{
+        "name": "Bruto",
+        "description": "Crias de natureza Bruta são diretas e simples.",
+        "status": {
+            "durabilidade": 0,
+            "mira": -1,
+            "velocidade": 0,
+            "carapaca": 0,
+            "dano": 1,
+            "bateria": 0
+        }
+    },{
+        "name": "Calmo",
+        "description": "Crias de natureza Calma são pacientes e mantêm o foco mesmo sob pressão.",
+        "status": {
+            "durabilidade": 0,
+            "mira": 0,
+            "velocidade": -1,
+            "carapaca": 0,
+            "dano": 0,
+            "bateria": 1
+        }
+    },{
+        "name": "Timido",
+        "description": "Crias de natureza tímida falam pouco e não gostam de ser o centro das atenções.",
+        "status": {
+            "durabilidade": 0,
+            "mira": 0,
+            "velocidade": 1,
+            "carapaca": 0,
+            "dano": -1,
+            "bateria": 0
+        }
+    },{
+        "name": "Humilde",
+        "description": "Crias da natureza humilde são humildões. Não gostam de se sobressair e nem de ficarem para trás.",
+        "status": {
+            "durabilidade": 0,
+            "mira": 0,
+            "velocidade": 0,
+            "carapaca": 0,
+            "dano": 0,
+            "bateria": 0
+        }
+    },{
+        "name": "Cuidadosos",
+        "description": "Crias da natureza protetora são como irmãos mais velhos, preocupados e defensores.",
+        "status": {
+            "durabilidade": -1,
+            "mira": 0,
+            "velocidade": 0,
+            "carapaca": 1,
+            "dano": 0,
+            "bateria": 0
+        }
+    }
+]
