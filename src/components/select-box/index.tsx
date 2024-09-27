@@ -21,7 +21,7 @@ export default function SelectBox({ label, linkedFor, data, placeholder, onChang
             >
                 <option value="" disabled>{placeholder}</option>
                 {data.map((viewData) => (
-                    <option key={viewData} value={viewData}>{viewData}</option> // Atribui o valor correto a cada option
+                    <option key={viewData} value={viewData}>{viewData}</option>
                 ))}
             </select>
         </div>

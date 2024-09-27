@@ -4,7 +4,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Aspirar",
             "description": "Quando for alvo de uma Técnica elemental, você pode absorver parte do Dano. Uma vez por Combate, role 1d6. Você anula aquela quantidade de Dano de um Ataque! direcionado a você."
         }
@@ -22,7 +22,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Panela Velha é Que Faz Comida Boa:",
             "description": "Uma vez por Combate, quando usar a ação de Aguente! você faz a jogada com Sintonia."
         }
@@ -40,7 +40,7 @@
         "type": "Geral",
         "location": "Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Girar:",
             "description": "O pião começa a girar, e uma vez por combate o Cria pode fazer uma jogada de Cuidado! sem gastar Pontos de Comando. Em contrapartida, em seu próximo Turno sua primeira jogada deve ser feita com um dado de dessintonização."
         }
@@ -49,7 +49,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Apagar fogo:",
             "description": "Enquanto estiver portando o Extintor de Incêndio você recebe +1 em jogadas de Aguente! e Cuidado! contra Crias do tipo Fogo. Quando fizer uma dessas jogadas usando seu efeito, role 1d6. Se tirar 1 ou 2, o Extintor não pode ser usado novamente nesse combate."
         }
@@ -58,7 +58,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Atrair:",
             "description": "Enquanto estiver usando o Para-Raios Técnicas Elétricas que tenham você como alvo recebem +1 em Mira e custam +1 Ponto de Bateria."
         }
@@ -67,7 +67,7 @@
         "type": "Geral",
         "location": "Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Caminhada segura:",
             "description": "Enquanto estiver usando as Botinas, você recebe +1 em Carapaça contra Crias de Terra."
         }
@@ -76,7 +76,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Cortar-vento:",
             "description": "Enquanto estiver vestindo o Corta-Vento, Você recebe +1 em Carapaça contra Crias de Vento."
         }
@@ -85,7 +85,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Boiar:",
             "description": "Quando for alvo de Técnicas de Água, você recebe +2 em jogadas de Aguente! e Cuidado!."
         }
@@ -94,7 +94,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Fagulha:",
             "description": "Uma vez por combate, você pode ativar o Pingente de Carvão para que sua próxima jogada utilizando uma Técnica de fogo seja feita em Sintonia."
         }
@@ -103,7 +103,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Derreter:",
             "description": "Uma vez por Combate, o Cristal de Gelo concede +2 no Dano ou 1 no efeito de Cura de técnicas de Água. Ele só pode ser usado até o final da terceira Rodada."
         }
@@ -112,7 +112,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Descarga:",
             "description": "Uma vez por Combate, a Pilha Gasta gera uma descarga que reabastece o Cria. Quando usar uma Técnica de tipo Elétrico, o Cria recebe +1 em Bateria para utilizá-la,além de um bônus de +1 no Dano da técnica."
         }
@@ -121,7 +121,7 @@
         "type": "Geral",
         "location": "Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Brisa nas asas:",
             "description": "Uma vez por combate, quando usar uma técnica de Vento, Você recebe +2 em Velocidade durante 1d3 turnos."
         }
@@ -130,7 +130,7 @@
         "type": "Geral",
         "location": "Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Pisar firme:",
             "description": "Uma vez por Combate, Quando o Cria Pisar Firme, ele altera a Arena para o elemento Terra durante 1 Rodada. Se a Arena já for desse tipo, seus efeitos são aumentados em 1."
         }
@@ -138,7 +138,7 @@
         "name": "Chip de ataque",
         "type": "Geral",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Ativação:",
             "description": "Ao ativar o Chip de Força, o Cria recebe +1 em Mira e Dano durante 2 Rodadas."
         }
@@ -146,7 +146,7 @@
         "name": "Chip de velocidade",
         "type": "Geral",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Ativação:",
             "description": "Ao ativar o Chip de Velocidade, o Cria recebe +2 em Velocidade e Dano durante 1 Rodadas."
         }
@@ -154,7 +154,7 @@
         "name": "Chip de defesa",
         "type": "Geral",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Ativação:",
             "description": "Ao ativar o Chip de Defesa, o Cria recebe +2 em Carapaça e Dano durante 1 Rodadas."
         }
@@ -162,7 +162,7 @@
         "name": "Chip de recarga",
         "type": "Geral",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Ativação:",
             "description": "O Chip de Recarga recupera 1 Ponto de Bateria do Cria."
         }
@@ -171,7 +171,7 @@
         "type": "Geral",
         "location":"Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Contrari e expandir:",
             "description": "As molas te permitem fazer uma investida voraz. Quando for ganhar a rolagem de iniciativa, você gasta 1 Ponto de Bateria para receber +2 em velocidade em jogadas de Iniciativa."
         }
@@ -184,7 +184,7 @@
             "velocidade": "1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Defletir:",
             "description": "Quando for alvo de um Ataque!, você pode gastar 1 Ponto de Bateria para receber +2 em sua Carapaça na sua jogada de Aguente! para resistir a ele."
         }
@@ -199,7 +199,7 @@
             "velocidade": "-1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Martelar:",
             "description": "Quando acertar um golpe, você causa -1 na Carapaça do adversário até o final da próxima rodada."
         }
@@ -213,7 +213,7 @@
             "velocidade": "1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Corte rapido:",
             "description": "Uma vez por combate,quando acertar um Ataque!, você pode fazer outro sem gastar pontos de Comando, causando Dano 2."
         }
@@ -227,7 +227,7 @@
             "mira": "1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Canalizar:",
             "description": "Enquanto estiver empunhando a lança, todas as suas técnicas custam 1 Ponto de Bateria a menos."
         }
@@ -241,7 +241,7 @@
             "carapaca": "1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Corte preciso:",
             "description": "Uma vez por Combate, quando acertar um Ataque!, cause +2 de Dano."
         }
@@ -254,7 +254,7 @@
             "carapaca": "-1",
             "dano": "1"
         },
-        "skill:": {
+        "skill": {
             "name":"Ponto de pressão:",
             "description": "Uma vez por combate, quando acertar um Ataque, seu alvo gasta 1 Ponto de Bateria."
         }
@@ -268,20 +268,19 @@
             "mira":"1",
             "dano": "2"
         },
-        "skill:": {
+        "skill": {
             "name":"Titereiro:",
             "description": "Uma vez por Combate,você pode escolher qual Comando o oponente vai executar."
         }
     },{
         "name": "Casco de tartaruga",
         "type": "Beast",
-        "location":"Parte superior",
         "memoryCost": "3",
         "upgrade":{
             "carapaca": "1",
             "velocidade":"-1"
         },
-        "skill:": {
+        "skill": {
             "name":"Casco protetor:",
             "description": "Uma vez por Combate, quando for vítima de um Ataque! o Casco de Tartaruga anula 1d6 do Dano sofrido."
         }
@@ -294,7 +293,7 @@
             "dano": "1",
             "velocidade":"-1"
         },
-        "skill:": {
+        "skill": {
             "name":"Chifrada:",
             "description": "Uma vez por Combate, quando acertar um Ataque! no oponente, você o deixa No Ar até o final da Rodada."
         }
@@ -303,7 +302,7 @@
         "type": "Beast",
         "location":"Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Estraçalhar:",
             "description": "Uma vez por combate, quando acertar um Ataque! cause Dano+1 e -2 na Carapaça do oponente até o final de seu próximo turno."
         }
@@ -312,7 +311,7 @@
         "type": "Beast",
         "location":"Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Garras mortais:",
             "description": "Quando usar alguma técnica com ‘’Garra’’ no nome, cause +1 no Dano."
         }
@@ -321,7 +320,7 @@
         "type": "Beast",
         "location":"Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Deslizar:",
             "description": "uma vez por combate, receba + 2 em Velocidade até o final da próxima rodada."
         }
@@ -333,7 +332,7 @@
         "upgrade":{
             "carapaca":"1"
         },
-        "skill:": {
+        "skill": {
             "name":"Tamborzão:",
             "description": "Gaste 2 Pontos Bateria para tocar o de seu peito para causar dessincronização na próxima rolagem do oponente."
         }
@@ -342,7 +341,7 @@
         "type": "Beast",
         "location":"Parte inferior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Agilidade símia:",
             "description": "Gaste 1 Ponto de Bateria. Quando usar a ação Cuidado! você recebe +2 em Velocidade."
         }
@@ -354,7 +353,7 @@
         "upgrade":{
             "velocidade":"-1"
         },
-        "skill:": {
+        "skill": {
             "name":"Picada venenosa:",
             "description": "Uma vez por combate, se naquele combate tiver acertado o alvo com pelo menos dois ataques, deixe-o Envenenado até o final da próxima rodada."
         }
@@ -363,7 +362,7 @@
         "type": "Shoto",
         "location":"Parte inferior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Remover pesos:",
             "description": "Você recebe +1 em Velocidade e Mira até o final do combate."
         }
@@ -372,7 +371,7 @@
         "type": "Shoto",
         "location":"Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Soco sinergizado:",
             "description": "Quando estiver portando as luvas, as técnicas com ‘’soco’’ no título custam 1 Ponto de Bateria a menos."
         }
@@ -385,7 +384,7 @@
             "dano":"1",
             "velocidade":"-1"
         },
-        "skill:": {
+        "skill": {
             "name":"Perfurar o solo:",
             "description": "Suas técnicas de Terra custam 1 Ponto de Bateria a Menos."
         }
@@ -402,7 +401,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Disparo rápido:",
             "description": "Uma vez por combate, usa e Canhão de Mão para receber +3 em sua rolagem de iniciativa."
         }
@@ -411,7 +410,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Tiro carregado:",
             "description": "Você pode gastar 2 pontos de Bateria para receber +1 em Dano em seu próximo Ataque!."
         }
@@ -424,7 +423,7 @@
             "carapaca":"1",
             "velocidade":"-2"
         },
-        "skill:": {
+        "skill": {
             "name":"Demolir:",
             "description": "Uma vez por combate você transforma um acerto normal em um Breaker."
         }
@@ -433,7 +432,7 @@
         "type": "Shooter",
         "location":"Parte inferior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Paciência de atirador:",
             "description": "Gaste x Pontos de Bateria quando usar Ataque! para receber +X em Mira."
         }
@@ -442,7 +441,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Sujar Visor:",
             "description": "Quando acertar um Ataque! no alvo, gaste 1 Ponto de Bateria. Ele recebe -2 em Mira até o final daquela rodada."
         }
@@ -451,7 +450,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Perfurar:",
             "description": "Uma vez por combate, quando acertar um Ataque! no alvo, você causa Dano+1."
         }
@@ -460,7 +459,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "2",
-        "skill:": {
+        "skill": {
             "name":"Prender:",
             "description": "Uma vez por Combate, quando acertar um Ataque! no alvo, você o deixa paralisado durante seu próximo turno."
         }
@@ -469,7 +468,7 @@
         "type": "Shooter",
         "location":"Parte superior",
         "memoryCost": "1",
-        "skill:": {
+        "skill": {
             "name":"Dados no chão:",
             "description": "Uma vez por combate, você despeja os dados no chão, causando 1 Ponto de Dano no alvo."
         }
@@ -482,7 +481,7 @@
             "carapaca":"1",
             "velocidade":"-1"
         },
-        "skill:": {
+        "skill": {
             "name":"Enrolar:",
             "description": "Uma vez por combate, quando acertar um Ataque! em um oponente, ele recebe -2 em velocidade por 1 rodada, e perde automaticamente sua próxima disputa de iniciativa."
         }

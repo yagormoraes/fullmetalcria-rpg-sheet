@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from 'react';
 import HexagonInput from "../hexagon-input";
 import SelectBox from "../select-box";
 import robotClasses from "../../data/robot-class.json";
@@ -13,9 +13,6 @@ const animatedComponents = makeAnimated();
 
 const types = ["Água", "Fogo", "Vento", "Terra", "Elétrico", "Neutro"];
 const ranks = ["Nulo", "Latão", "Bronze", "Prata", "Ouro", "Full Metal"];
-
-const techSelect = techs.map((tech) => ({ value: tech.name, label: tech.name }));
-const partSelect = parts.map((part) => ({ value: part.name, label: part.name }))
 
 export default function RobotInputs() {
     const [filter, setFilter] = useState({
@@ -44,6 +41,20 @@ export default function RobotInputs() {
     const [description, setDescription] = useState("");
     const [filteredParts, setFilteredParts] = useState<any>([]);
     const [filteredTechniques, setFilteredTechniques] = useState<any>([]);
+    const [selectedOptions, setSelectedOptions] = useState<any>([]);
+    const [selectedParts, setSelectedParts] = useState<any>([])
+
+    const handleTechniqueChange = (selectedOptions: any) => {
+        setSelectedOptions(selectedOptions);
+    };
+
+    const handlePartChange = (selectedOptions: any) => {
+        setSelectedParts(selectedOptions);
+    };
+
+    useEffect(() => {
+        console.log(selectedParts)
+    }, [selectedParts])
 
     useEffect(() => {
         const filteredParts = parts.filter((part) => {
@@ -60,8 +71,8 @@ export default function RobotInputs() {
         });
 
         const filterRequireTypeRequisite = filterRequireClassRequisite.filter((technique) => {
-            const typeMatch = technique?.prerequisite?.type ?  !technique.prerequisite.type.includes(filter.type) : false;
-            return typeMatch 
+            const typeMatch = technique?.prerequisite?.type ? !technique.prerequisite.type.includes(filter.type) : false;
+            return typeMatch
         })
 
         const otherFilteredTechniques = filterRequireClassRequisite.filter(
@@ -78,7 +89,7 @@ export default function RobotInputs() {
         const selectedClass = robotClasses.find(
             (rc) => rc.name === event.target.value
         );
-    
+
         if (selectedClass) {
             setName(selectedClass.name);
             setDescription(selectedClass.description);
@@ -87,7 +98,7 @@ export default function RobotInputs() {
             setFilter((prev) => ({ ...prev, class: selectedClass.name }));
         }
     };
-    
+
 
     const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedType = event.target.value;
@@ -98,9 +109,8 @@ export default function RobotInputs() {
         const selectedPersonality = robotPersonalities.find(
             (rp) => rp.name.toLowerCase() === event.target.value.toLowerCase()
         );
-    
+
         if (selectedPersonality) {
-            // Calcular os novos valores com base nos valores baseHexagonValues
             setHexagonValues({
                 durabilidade: baseHexagonValues.durabilidade + selectedPersonality.status.durabilidade,
                 mira: baseHexagonValues.mira + selectedPersonality.status.mira,
@@ -111,9 +121,9 @@ export default function RobotInputs() {
             });
         }
     };
-    
-    
-    
+
+
+
 
     const handleHexagonValueChange = (attribute: string, newValue: number) => {
         setHexagonValues((prevValues) => ({
@@ -184,12 +194,47 @@ export default function RobotInputs() {
             <div>
                 <div className="mt-2 grid grid-cols-2 gap-3">
                     <div className="bg-stone-400 rounded-lg">
-                        <span className="text-white font-semibold">Peças</span>
-                        <Select placeholder="Selecione as peças" components={animatedComponents} closeMenuOnSelect={false} isMulti options={filteredParts.map((part: { name: any; }) => ({ value: part.name, label: part.name }))} />
+                        <div className='flex items-center justify-between px-1'>
+                            <span className="text-white font-semibold">Peças</span>
+                            <span className="text-white text-[10px]">Você tem no máximo X Pontos de Memória</span>
+                        </div>
+                        <Select
+                            placeholder="Selecione as peças"
+                            components={animatedComponents}
+                            closeMenuOnSelect={false}
+                            isMulti
+                            onChange={handlePartChange}
+                            options={filteredParts.map((part: { name: any; }) => ({ value: part, label: part.name }))} />
                     </div>
                     <div className="bg-stone-400 rounded-lg">
                         <span className="text-white font-semibold">Técnicas</span>
-                        <Select placeholder="Selecione as técnicas" components={animatedComponents} closeMenuOnSelect={false} isMulti options={filteredTechniques.map((tech: { name: any; }) => ({ value: tech.name, label: tech.name }))} />
+                        <Select
+                            isOptionDisabled={() => selectedOptions.length >= 2}
+                            placeholder="Selecione as técnicas"
+                            components={animatedComponents}
+                            closeMenuOnSelect={false}
+                            isMulti
+                            onChange={handleTechniqueChange}
+                            options={filteredTechniques.map((tech: { name: any; }) => ({ value: tech, label: tech.name }))}
+                        />
+                    </div>
+                    <div>
+                        <h3>Peças Selecionadas</h3>
+                        
+                    </div>
+                    <div>
+                        <h3>Técnicas Selecionadas:</h3>
+                        <ul>
+                            {selectedOptions.map((tech: { label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: { type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }; }, label: any) => (
+                                <div className='bg-white border my-2'>
+                                    <li>Nome: {tech.label}</li>
+                                    <li>Tipo: {tech.value.type}</li>
+                                    <li>Custo de bateria: {tech.value.battery}</li>
+                                    <li>Descrição: {tech.value.description}</li>
+                                </div>
+
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
