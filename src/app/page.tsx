@@ -32,10 +32,6 @@ export default function Home() {
     setChildren(children);
   };
 
-  useEffect(() => {
-    console.log("children", children);
-  }, [children]);
-
   return (
     <div className={darkMode ? "dark" : ""}>
       <Header onToggleDarkMode={toggleDarkMode} />
@@ -49,9 +45,9 @@ export default function Home() {
           <span className="text-white text-2xl font-bold">Dados do Cria</span>
           <div className="grid grid-cols-4 gap-3">
             <InputBox label="Nome:" linkedFor="robot-name" height="h-6" />
-            <SelectBox label="Personalidade:" data={personalities} linkedFor="robot-personality" />
-            <SelectBox label="Chassi:" data={classes} linkedFor="robot-class" />
-            <SelectBox label="Tipo:" data={types} linkedFor="robot-type" />
+            <SelectBox label="Personalidade:" data={personalities} placeholder="Selecione a personalidade" linkedFor="robot-personality" />
+            <SelectBox label="Chassi:" data={classes} placeholder="Selecione o chassi" linkedFor="robot-class" />
+            <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" />
           </div>
           <div className="h-2" />
           <div className="grid grid-cols-3 gap-3">
