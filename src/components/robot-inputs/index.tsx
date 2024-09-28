@@ -220,7 +220,33 @@ export default function RobotInputs() {
                     </div>
                     <div>
                         <h3>Peças Selecionadas</h3>
-                        
+                        <ul>
+                            {console.log(selectedParts)}
+                            {selectedParts.map((tech: {
+                                label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: {
+                                    skill: any;
+                                    memoryCost: any;
+                                    position: any; type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined;
+                                };
+                            }, label: any) => (
+                                <div className='bg-white border my-2'>
+                                    <li>Nome: {tech.label}</li>
+                                    <li>Tipo: {tech.value.type}</li>
+                                    {tech.value.position &&
+                                        <li>Posição: {tech.value.position}</li>
+                                    }
+                                    {tech.value.memoryCost &&
+                                        <li>Custo de memória: {tech.value.memoryCost}</li>
+                                    }
+                                    {tech.value.skill &&
+                                        <li>{tech.value.skill.name} {tech.value.skill.description}</li>
+                                    }
+
+                                </div>
+
+                            ))}
+                        </ul>
+
                     </div>
                     <div>
                         <h3>Técnicas Selecionadas:</h3>
