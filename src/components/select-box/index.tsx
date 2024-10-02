@@ -15,7 +15,7 @@ export default function SelectBox({ label, linkedFor, data, placeholder, onChang
             <select
                 onChange={onChange}
                 value={value}
-                className="rounded-lg"
+                className="h-6 rounded-lg"
                 name={linkedFor}
                 id={linkedFor}
             >
