@@ -17,7 +17,9 @@ const ranks = ["Nulo", "Latão", "Bronze", "Prata", "Ouro", "Full Metal"];
 export default function RobotInputs() {
     const [filter, setFilter] = useState({
         class: "",
-        type: ""
+        type: "",
+        personality: "",
+        rank: ""
     });
     const [baseHexagonValues, setBaseHexagonValues] = useState({
         durabilidade: 0,
@@ -111,6 +113,7 @@ export default function RobotInputs() {
         );
 
         if (selectedPersonality) {
+            setFilter((prev) => ({ ...prev, personality: selectedPersonality.name }))
             setHexagonValues({
                 durabilidade: baseHexagonValues.durabilidade + selectedPersonality.status.durabilidade,
                 mira: baseHexagonValues.mira + selectedPersonality.status.mira,
@@ -121,6 +124,11 @@ export default function RobotInputs() {
             });
         }
     };
+
+    const handleRankChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedRank = event.target.value;
+        setFilter((prev) => ({ ...prev, rank: selectedRank }));
+    }
 
 
 
@@ -151,13 +159,17 @@ export default function RobotInputs() {
                     placeholder="Selecione a personalidade"
                     linkedFor="robot-personality"
                     onChange={handlePersonalityChange}
+                    value={filter.personality}
                 />
-                <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" onChange={handleTypeChange} />
-                <SelectBox label="Rank:" data={ranks} placeholder="Qual seu rank?" linkedFor="robot-rank" />
+                <SelectBox label="Tipo:" data={types} placeholder="Selecione o tipo" linkedFor="robot-type" onChange={handleTypeChange} value={filter.type} />
+                <SelectBox label="Rank:" data={ranks} placeholder="Qual seu rank?" linkedFor="robot-rank" onChange={handleRankChange} value={filter.rank} />
             </div>
-            <div className='text-white'>
-                <div>{`${name} : ${description}`}</div>
-            </div>
+            {(name && description) && (
+                <div className='text-white'>
+                    <div>{`${name} : ${description}`}</div>
+                </div>
+            )}
+
             <div className="h-2" />
             <div className="grid grid-cols-3 gap-3">
                 <HexagonInput
@@ -193,10 +205,10 @@ export default function RobotInputs() {
             </div>
             <div>
                 <div className="mt-2 grid grid-cols-2 gap-3">
-                    <div className="bg-stone-400 rounded-lg">
+                    <div>
+                        <div className="bg-stone-400 rounded-lg">
                         <div className='flex items-center justify-between px-1'>
                             <span className="text-white font-semibold">Peças</span>
-                            <span className="text-white text-[10px]">Você tem no máximo X Pontos de Memória</span>
                         </div>
                         <Select
                             placeholder="Selecione as peças"
@@ -204,64 +216,74 @@ export default function RobotInputs() {
                             closeMenuOnSelect={false}
                             isMulti
                             onChange={handlePartChange}
-                            options={filteredParts.map((part: { name: any; }) => ({ value: part, label: part.name }))} />
-                    </div>
-                    <div className="bg-stone-400 rounded-lg">
-                        <span className="text-white font-semibold">Técnicas</span>
-                        <Select
-                            isOptionDisabled={() => selectedOptions.length >= 2}
-                            placeholder="Selecione as técnicas"
-                            components={animatedComponents}
-                            closeMenuOnSelect={false}
-                            isMulti
-                            onChange={handleTechniqueChange}
-                            options={filteredTechniques.map((tech: { name: any; }) => ({ value: tech, label: tech.name }))}
-                        />
-                    </div>
-                    <div>
-                        <h3>Peças Selecionadas</h3>
-                        <ul>
-                            {console.log(selectedParts)}
-                            {selectedParts.map((tech: {
-                                label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: {
-                                    skill: any;
-                                    memoryCost: any;
-                                    position: any; type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined;
-                                };
-                            }, label: any) => (
-                                <div className='bg-white border my-2'>
-                                    <li>Nome: {tech.label}</li>
-                                    <li>Tipo: {tech.value.type}</li>
-                                    {tech.value.position &&
-                                        <li>Posição: {tech.value.position}</li>
-                                    }
-                                    {tech.value.memoryCost &&
-                                        <li>Custo de memória: {tech.value.memoryCost}</li>
-                                    }
-                                    {tech.value.skill &&
-                                        <li>{tech.value.skill.name} {tech.value.skill.description}</li>
-                                    }
+                            options={filteredParts.map((part: { name: any; }) => ({ value: part, label: part.name }))} />  
+                        </div>
+                        
+                        {selectedParts.length > 0 && (
+                            <div className='bg-stone-400 rounded-lg mt-5'>
+                                <h3>Peças Selecionadas:</h3>
+                                <ul>
+                                    {selectedParts.map((tech: {
+                                        label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: {
+                                            skill: any;
+                                            memoryCost: any;
+                                            position: any; type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined;
+                                        };
+                                    }, label: any) => (
+                                        <div className='bg-white border my-2'>
+                                            <li>Nome: {tech.label}</li>
+                                            <li>Tipo: {tech.value.type}</li>
+                                            {tech.value.position &&
+                                                <li>Posição: {tech.value.position}</li>
+                                            }
+                                            {tech.value.memoryCost &&
+                                                <li>Custo de memória: {tech.value.memoryCost}</li>
+                                            }
+                                            {tech.value.skill &&
+                                                <li>{tech.value.skill.name} {tech.value.skill.description}</li>
+                                            }
 
-                                </div>
+                                        </div>
 
-                            ))}
-                        </ul>
+                                    ))}
+                                </ul>
+
+                            </div>
+                        )}
 
                     </div>
                     <div>
-                        <h3>Técnicas Selecionadas:</h3>
-                        <ul>
-                            {selectedOptions.map((tech: { label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: { type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }; }, label: any) => (
-                                <div className='bg-white border my-2'>
-                                    <li>Nome: {tech.label}</li>
-                                    <li>Tipo: {tech.value.type}</li>
-                                    <li>Custo de bateria: {tech.value.battery}</li>
-                                    <li>Descrição: {tech.value.description}</li>
-                                </div>
+                        <div className='bg-stone-400 rounded-lg'>
+                            <span className="text-white font-semibold">Técnicas</span>
+                            <Select
+                                placeholder="Selecione as técnicas"
+                                components={animatedComponents}
+                                closeMenuOnSelect={false}
+                                isMulti
+                                onChange={handleTechniqueChange}
+                                options={filteredTechniques.map((tech: { name: any; }) => ({ value: tech, label: tech.name }))}
+                            />
+                        </div>
 
-                            ))}
-                        </ul>
+                        {selectedOptions.length > 0 && (
+                            <div className='bg-stone-400 rounded-lg mt-5'>
+                                <h3>Técnicas Selecionadas:</h3>
+                                <ul>
+                                    {selectedOptions.map((tech: { label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; value: { type: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; battery: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined; }; }, label: any) => (
+                                        <div className='bg-white border my-2'>
+                                            <li>Nome: {tech.label}</li>
+                                            <li>Tipo: {tech.value.type}</li>
+                                            <li>Custo de bateria: {tech.value.battery}</li>
+                                            <li>Descrição: {tech.value.description}</li>
+                                        </div>
+
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
                     </div>
+
                 </div>
             </div>
         </div>
