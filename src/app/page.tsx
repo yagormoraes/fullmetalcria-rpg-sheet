@@ -7,20 +7,28 @@ import WarningPlayers from "@/components/warning-players";
 import SelectChildren from "@/components/select-children";
 import { Children } from "@/types/children";
 import ChildrenInputs from "@/components/children-inputs";
-import { Robot } from "@/types/robot";
 import RobotInputs from "@/components/robot-inputs";
+import PdfDownload from "@/components/pdf-download"
+import ChildrenSelect from "@/components/children-select";
 
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [children, setChildren] = useState<Children | null>(null);
-
+  const [childrenInputs, setChildrenInputs] = useState<any>(null);
+  const [robotInputs, setRobotInputs] = useState<any>(null);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   const handleChildren = (children: Children) => {
     setChildren(children);
-  };
+  };  
+
+  const [childrenData, setChildrenData] = useState<Children | null>(null);
+
+    const handleInputChange = (data: any) => {
+        setChildrenData(data);
+    };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -29,9 +37,10 @@ export default function Home() {
         <div className="h-5" />
         <Banner />
         <WarningPlayers />
-        <SelectChildren onSelectChildren={handleChildren} />
-        <ChildrenInputs children={children} />
-        <RobotInputs/>
+        <ChildrenSelect/>
+        {/* <RobotInputs /> */}
+        <PdfDownload children={children}/>
+        
         <div className="h-2" />
       </main>
       <Footer />

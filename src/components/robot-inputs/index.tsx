@@ -55,10 +55,6 @@ export default function RobotInputs() {
     };
 
     useEffect(() => {
-        console.log(selectedParts)
-    }, [selectedParts])
-
-    useEffect(() => {
         const filteredParts = parts.filter((part) => {
             const hasNoPrerequisite = !part.prerequisite || Object.keys(part.prerequisite).length === 0;
             const matchesPrerequisite = part.prerequisite?.class.includes(filter.class);
