@@ -97,5 +97,15 @@
             "label": "Você treina para:",
             "values": "Para ser o proximo herdeiro da familia, para ter o cria com os equipamentos mais caros, etc."
         }
+    },{
+        "class": "Esportista",
+        "img": "/assets/pivete-esportista.png",
+        "altText": "pivete-esportista",
+        "room": "Cheio de medalhas de outro e outras premiações, lotado de pôsteres e outros itens de sua atletla favorita, repleto de coisas de nerd, que você esconde com fervor, etc.",
+        "objects": "Skate, raquete de tênicos, bola de capotão, etc.",
+        "unique": {
+            "label": "Você treina para:",
+            "values": "Ser o mais forte, ser o mais rápido, ser o mais gracioso, etc."
+        }
     }
 ]
