@@ -14,21 +14,9 @@ import ChildrenSelect from "@/components/children-select";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [children, setChildren] = useState<Children | null>(null);
-  const [childrenInputs, setChildrenInputs] = useState<any>(null);
-  const [robotInputs, setRobotInputs] = useState<any>(null);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
-  const handleChildren = (children: Children) => {
-    setChildren(children);
-  };  
-
-  const [childrenData, setChildrenData] = useState<Children | null>(null);
-
-    const handleInputChange = (data: any) => {
-        setChildrenData(data);
-    };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -38,8 +26,7 @@ export default function Home() {
         <Banner />
         <WarningPlayers />
         <ChildrenSelect/>
-        {/* <RobotInputs /> */}
-        <PdfDownload children={children}/>
+        <RobotInputs />
         
         <div className="h-2" />
       </main>

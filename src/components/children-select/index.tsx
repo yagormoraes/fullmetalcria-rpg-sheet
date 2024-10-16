@@ -14,6 +14,11 @@ export default function ChildrenSelect() {
             values: "",
         },
     });
+    const [placeholders, setPlaceholders] = useState({
+        room: "",
+        objects: "",
+        uniqueValue: "",
+    });
 
     const handleInputChange = (name: string, value: string) => {
         setChildrenData((prev) => ({
@@ -25,11 +30,15 @@ export default function ChildrenSelect() {
     const handleCardSelect = (selectedClass: string, label: string, room: string, objects: string, values: string) => {
         setChildrenData((prev) => ({
             ...prev,
-            class: selectedClass,
-            unique: { ...prev.unique, label, values },
-            room: room,
-            objects: objects,
+            class: selectedClass, 
+            unique: { ...prev.unique, label }, 
         }));
+
+        setPlaceholders({
+            room,
+            objects,
+            uniqueValue: values,
+        });
     };
 
     useEffect(() => {
@@ -79,7 +88,7 @@ export default function ChildrenSelect() {
                         linkedFor="children-room"
                         height="h-20"
                         blockSize
-                        placeholder={childrenData.room}
+                        placeholder={placeholders.room}
                         onChange={(value: string) => handleInputChange("room", value)}
                     />
                     <InputBox
@@ -87,13 +96,13 @@ export default function ChildrenSelect() {
                         linkedFor="children-object"
                         height="h-20"
                         blockSize
-                        placeholder={childrenData.objects} 
+                        placeholder={placeholders.objects} 
                         onChange={(value: string) => handleInputChange("objects", value)}
                     />
                     <InputBox
                         label={childrenData.unique.label}
                         linkedFor="children-unique"
-                        placeholder={childrenData.unique.values}
+                        placeholder={placeholders.uniqueValue}
                         height={
                             childrenData?.unique?.values?.length && childrenData.unique.values.length > 140
                                 ? "h-24"

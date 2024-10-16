@@ -46,12 +46,40 @@ export default function RobotInputs() {
     const [selectedOptions, setSelectedOptions] = useState<any>([]);
     const [selectedParts, setSelectedParts] = useState<any>([])
 
+    const [robot, setRobot] = useState({
+        name: "",
+        description: "",
+        class: "",
+        type: "",
+        personality: "",
+        rank: "",
+        hexagonValues: {
+            durabilidade: 0,
+            mira: 0,
+            velocidade: 0,
+            carapaca: 0,
+            dano: 0,
+            bateria: 0,
+        },
+        techs: [],
+        parts: []
+
+    });
     const handleTechniqueChange = (selectedOptions: any) => {
         setSelectedOptions(selectedOptions);
+        setRobot((prev) => ({
+            ...prev,
+            techs: selectedOptions
+        }))
     };
 
     const handlePartChange = (selectedOptions: any) => {
         setSelectedParts(selectedOptions);
+        setRobot((prev) => ({
+            ...prev,
+            parts: selectedOptions
+        }))
+
     };
 
     useEffect(() => {
@@ -82,6 +110,12 @@ export default function RobotInputs() {
         setFilteredTechniques(filteredTechniques);
     }, [filter.class, filter.type]);
 
+    const handleNameChange = (name: string, value: string) => {
+        setRobot((prev) => ({
+            ...prev,
+            [name]: value,
+        }))
+    }
 
     const handleClassChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedClass = robotClasses.find(
@@ -94,6 +128,13 @@ export default function RobotInputs() {
             setBaseHexagonValues(selectedClass.status);
             setHexagonValues(selectedClass.status);
             setFilter((prev) => ({ ...prev, class: selectedClass.name }));
+            setRobot((prev) => ({
+                ...prev,
+                name: selectedClass.name,
+                description: selectedClass.description,
+                class: selectedClass.name,
+                hexagonValues: selectedClass.status
+            }));
         }
     };
 
@@ -101,6 +142,10 @@ export default function RobotInputs() {
     const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedType = event.target.value;
         setFilter((prev) => ({ ...prev, type: selectedType }));
+        setRobot((prev) => ({
+            ...prev,
+            type: event.target.value
+        }));
     };
 
     const handlePersonalityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -118,12 +163,28 @@ export default function RobotInputs() {
                 dano: baseHexagonValues.dano + selectedPersonality.status.dano,
                 bateria: baseHexagonValues.bateria + selectedPersonality.status.bateria,
             });
+            setRobot((prev) => ({
+                ...prev,
+                personality: selectedPersonality.name,
+                hexagonValues: {
+                    durabilidade: baseHexagonValues.durabilidade + selectedPersonality.status.durabilidade,
+                    mira: baseHexagonValues.mira + selectedPersonality.status.mira,
+                    velocidade: baseHexagonValues.velocidade + selectedPersonality.status.velocidade,
+                    carapaca: baseHexagonValues.carapaca + selectedPersonality.status.carapaca,
+                    dano: baseHexagonValues.dano + selectedPersonality.status.dano,
+                    bateria: baseHexagonValues.bateria + selectedPersonality.status.bateria,
+                }
+            }));
         }
     };
 
     const handleRankChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedRank = event.target.value;
         setFilter((prev) => ({ ...prev, rank: selectedRank }));
+        setRobot((prev) => ({
+            ...prev,
+            rank: event.target.value
+        }));
     }
 
 
@@ -134,13 +195,24 @@ export default function RobotInputs() {
             ...prevValues,
             [attribute]: newValue
         }));
+        setRobot((prev) => ({
+            ...prev,
+            hexagonValues: {
+                ...prev.hexagonValues,
+                [attribute]: newValue
+            }
+        }));
     };
+
+    useEffect(() => {
+        console.log("robot", robot)
+    }, [robot])
 
     return (
         <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
             <span className="text-white text-2xl font-bold">Dados do Cria</span>
             <div className="grid grid-cols-5 gap-3">
-                <InputBox label="Nome:" linkedFor="robot-name" height="h-6" />
+                <InputBox onChange={(value) => handleNameChange("name", value)} label="Nome:" linkedFor="robot-name" height="h-6" />
                 <SelectBox
                     label="Chassi:"
                     data={robotClasses.map((rc) => rc.name)}

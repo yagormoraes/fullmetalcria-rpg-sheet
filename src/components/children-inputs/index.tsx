@@ -8,7 +8,6 @@ type ChildrenInputsProps = {
 };
 
 export default function ChildrenInputs({ children, onChange }: ChildrenInputsProps) {
-    // Estado para armazenar os dados dos inputs
     const [childrenData, setChildrenData] = useState({
         name: "",
         class: children?.class || "",
@@ -20,7 +19,6 @@ export default function ChildrenInputs({ children, onChange }: ChildrenInputsPro
         },
     });
 
-    // Função para atualizar o estado e chamar a função onChange do pai
     const handleInputChange = (name: string, value: string) => {
         setChildrenData((prev) => ({
             ...prev,
