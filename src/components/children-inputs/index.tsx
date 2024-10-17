@@ -14,7 +14,7 @@ export default function ChildrenInputs({ children, onChange }: ChildrenInputsPro
         room: "",
         objects: "",
         unique: {
-            label: children?.unique?.label || "Traço único:",
+            label: children?.unique?.label || "Traço único",
             values: "",
         },
     });
@@ -60,7 +60,7 @@ export default function ChildrenInputs({ children, onChange }: ChildrenInputsPro
                     onChange={(value) => handleInputChange("objects", value)}
                 />
                 <InputBox
-                    label={childrenData.unique.label}
+                    label={`${childrenData.unique.label}:`}
                     linkedFor="children-unique"
                     placeholder={children?.unique?.values || ""}
                     height={

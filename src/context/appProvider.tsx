@@ -46,7 +46,7 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     class: "",
     room: "",
     objects: "",
-    unique: { label: "Traço único:", values: "" },
+    unique: { label: "Traço único", values: "" },
 });
 
 

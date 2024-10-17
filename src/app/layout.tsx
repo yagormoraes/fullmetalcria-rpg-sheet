@@ -3,7 +3,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "testando",
+  title: "Fichas Full Metal Cria",
 };
 
 export default function RootLayout({

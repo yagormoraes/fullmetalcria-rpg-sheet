@@ -6,7 +6,7 @@
         "room": "Cheio de coisas para crianças mais velhas, cheio de brinquedos, etc.",
         "objects": "Boneco dos anos 80, apito, boné de uma figura mais velha, etc.",
         "unique": {
-            "label": "Escolha um brinquedo:",
+            "label": "Escolha um brinquedo",
             "values": "Bolinhas de gude, uma pipa, minitura de T.Rex, etc"
         }
     },
@@ -17,7 +17,7 @@
         "room": "Debaixo de uma ponte, no porão de um adulto, em uma fábrica abandonada, etc.",
         "objects": "Uma foto antiga da sua antiga criança, um animalzinho que anda com você para todo canto, uma capa maneiraça, etc.",
         "unique": {
-            "label": "Sua antiga criança:",
+            "label": "Sua antiga criança",
             "values": "Cresceu e te deixou pra lá, recebeu um cria mais novo e te largou, fou proibida pelos pais de continuar com você, etc"
         }
     },
@@ -28,7 +28,7 @@
         "room": "Cheio de posters e livros revolucionários, com várias camas, está sempre tocando musica alta, etc.",
         "objects": "Violão de nylon, livro-manifesto, walkman, etc.",
         "unique": {
-            "label": "Escolha uma causa:",
+            "label": "Escolha uma causa",
             "values": "Direitos dos crias, proteção à natureza, mudança das políticas escolares, descobrir a verdade sobre a Equipe Prego, etc"
         }
     },
@@ -39,7 +39,7 @@
         "room": "Cheio de posters de campeões de luta de cria, discreto e trancafiado, etc.",
         "objects": "Bombinhas de fumaça, capa estilosa, máscara (duh!), etc.",
         "unique": {
-            "label": "A identidade secreta:",
+            "label": "A identidade secreta",
             "values": "Ao criar uma Máscara, decida também sua identidade secreta. Ela pode até mesmo fazer parte do grupo de personagens. Você pode jogar com sua identidade secreta sempre que quiser, mas quando uma Batalha de Cria começar, você deve trocar para a Máscara."
         }
     },
@@ -50,7 +50,7 @@
         "room": "Cheio de peças e com cheiro de graça, com as paredes cheias de posters de filmes dos anos 80, com partilheiras de livros organizadas por tema, etc.",
         "objects": "Um notebook velho, um caderno de anotações amassado, uma chave de fenda, etc.",
         "unique": {
-            "label": "Escolha uma materia favorita:",
+            "label": "Escolha uma materia favorita",
             "values": "Ciências, matemática, linguagem, geografia, etc."
         }
     },
@@ -61,7 +61,7 @@
         "room": "Cheio de coisas do seu irmão mais velho, um santuário em homenagem a uma lutadora famosa, organizado e certinho, etc.",
         "objects": "Um casaco grande e surrado, um cano de pvc, salgadinho para alimentar os amigos, etc.",
         "unique": {
-            "label": "Você protege os outros porque:",
+            "label": "Você protege os outros porque",
             "values": "Já fiz mal pra muita gente, me protegeram quando eu precisei, possuo um inabalável senso de justiça, etc."
         }
     },
@@ -72,7 +72,7 @@
         "room": "Cheio de revistas e posters de celebridades, o quarto é do seu computador e você só dorme ali, etc.",
         "objects": "A edição mais recente da revista Colírio, um moderno celular de flip, etc.",
         "unique": {
-            "label": "Seu blog é sobre:",
+            "label": "Seu blog é sobre",
             "values": "Moda, crias, fofocas, etc."
         }
     },
@@ -83,7 +83,7 @@
         "room": "Com medalhas de prata e troféus na prateleira, cheia de equipamento de treinamento, etc.",
         "objects": "Bandagem de lutador, uma medalha de participação do seu primeiro torneio, bola de futebol, etc.",
         "unique": {
-            "label": "Você treina para:",
+            "label": "Você treina para",
             "values": "Dar orgulho para seus pais, si mesmo, provar que o trabalho duro é o único caminho, etc."
         }
     },
@@ -94,7 +94,7 @@
         "room": "Enorme e do tamanho de uma sala de estar, cheio de coisas da sua irmã mais velha que não está mais ali, igual a um parque de diversões, etc.",
         "objects": "Um mordomo que aparece sempre que você chama, o modelo mais moderno de celular diretamente do Japão, um avião de controle remoto, etc.",
         "unique": {
-            "label": "Você treina para:",
+            "label": "Você treina para",
             "values": "Para ser o proximo herdeiro da familia, para ter o cria com os equipamentos mais caros, etc."
         }
     },{
@@ -104,7 +104,7 @@
         "room": "Cheio de medalhas de outro e outras premiações, lotado de pôsteres e outros itens de sua atletla favorita, repleto de coisas de nerd, que você esconde com fervor, etc.",
         "objects": "Skate, raquete de tênicos, bola de capotão, etc.",
         "unique": {
-            "label": "Você treina para:",
+            "label": "Você treina para",
             "values": "Ser o mais forte, ser o mais rápido, ser o mais gracioso, etc."
         }
     }

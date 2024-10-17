@@ -88,7 +88,7 @@ export default function ChildrenSelect() {
                         onChange={(value: string) => handleInputChange("objects", value)}
                     />
                     <InputBox
-                        label={childrenData.unique.label}
+                        label={`${childrenData.unique.label}:`}
                         linkedFor="children-unique"
                         placeholder={placeholders.uniqueValue}
                         height={
