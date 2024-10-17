@@ -25,12 +25,6 @@ export default function ChildrenInputs({ children, onChange }: ChildrenInputsPro
             [name]: value,
         }));
     };
-
-    /* useEffect(() => {
-        onChange(childrenData);
-        console.log("childrenData", childrenData)
-    }, [childrenData, onChange]); */
-
     return (
         <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
             <span className="text-white text-2xl font-bold">Dados do Pivete</span>

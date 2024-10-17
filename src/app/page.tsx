@@ -10,6 +10,7 @@ import ChildrenInputs from "@/components/children-inputs";
 import RobotInputs from "@/components/robot-inputs";
 import PdfDownload from "@/components/pdf-download"
 import ChildrenSelect from "@/components/children-select";
+import { AppProvider } from "@/context/appProvider";
 
 
 export default function Home() {
@@ -19,18 +20,22 @@ export default function Home() {
 
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <Header onToggleDarkMode={toggleDarkMode} />
-      <main className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
-        <div className="h-5" />
-        <Banner />
-        <WarningPlayers />
-        <ChildrenSelect/>
-        <RobotInputs />
-        
-        <div className="h-2" />
-      </main>
-      <Footer />
-    </div>
+    <AppProvider>
+      <div className={darkMode ? "dark" : ""}>
+        <Header onToggleDarkMode={toggleDarkMode} />
+        <main className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
+          <div className="h-5" />
+          <Banner />
+          <WarningPlayers />
+          <ChildrenSelect />
+          <RobotInputs />
+          <PdfDownload />
+
+          <div className="h-2" />
+        </main>
+        <Footer />
+      </div>
+    </AppProvider>
+
   );
 }

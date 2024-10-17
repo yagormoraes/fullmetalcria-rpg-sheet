@@ -1,19 +1,11 @@
 import Card from "../card";
 import data from "../../data/children.json";
 import InputBox from "../inputBox";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useAppContext } from "@/context/appProvider";
 
 export default function ChildrenSelect() {
-    const [childrenData, setChildrenData] = useState({
-        name: "",
-        class: "",
-        room: "",
-        objects: "",
-        unique: {
-            label: "Traço único:",
-            values: "",
-        },
-    });
+    const { childrenData, setChildrenData } = useAppContext();
     const [placeholders, setPlaceholders] = useState({
         room: "",
         objects: "",
@@ -21,14 +13,14 @@ export default function ChildrenSelect() {
     });
 
     const handleInputChange = (name: string, value: string) => {
-        setChildrenData((prev) => ({
-            ...prev,
-            [name]: value,
+        setChildrenData((prev: any) => ({
+          ...prev,
+          [name]: value,
         }));
-    };
+      };
 
     const handleCardSelect = (selectedClass: string, label: string, room: string, objects: string, values: string) => {
-        setChildrenData((prev) => ({
+        setChildrenData((prev: { unique: any; }) => ({
             ...prev,
             class: selectedClass, 
             unique: { ...prev.unique, label }, 
@@ -40,10 +32,6 @@ export default function ChildrenSelect() {
             uniqueValue: values,
         });
     };
-
-    useEffect(() => {
-        console.log("childrendata", childrenData);
-    }, [childrenData]);
 
     return (
         <>
@@ -109,7 +97,7 @@ export default function ChildrenSelect() {
                                 : "h-20"
                         }
                         onChange={(value: any) =>
-                            setChildrenData((prev) => ({
+                            setChildrenData((prev: { unique: any; }) => ({
                                 ...prev,
                                 unique: { ...prev.unique, values: value },
                             }))

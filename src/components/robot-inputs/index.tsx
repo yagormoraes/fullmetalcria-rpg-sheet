@@ -8,6 +8,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import techs from "../../data/techniques.json";
 import parts from "../../data/parts.json";
+import { useAppContext } from '@/context/appProvider';
 
 const animatedComponents = makeAnimated();
 
@@ -46,28 +47,10 @@ export default function RobotInputs() {
     const [selectedOptions, setSelectedOptions] = useState<any>([]);
     const [selectedParts, setSelectedParts] = useState<any>([])
 
-    const [robot, setRobot] = useState({
-        name: "",
-        description: "",
-        class: "",
-        type: "",
-        personality: "",
-        rank: "",
-        hexagonValues: {
-            durabilidade: 0,
-            mira: 0,
-            velocidade: 0,
-            carapaca: 0,
-            dano: 0,
-            bateria: 0,
-        },
-        techs: [],
-        parts: []
-
-    });
+    const { robotData, setRobotData } = useAppContext();
     const handleTechniqueChange = (selectedOptions: any) => {
         setSelectedOptions(selectedOptions);
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             techs: selectedOptions
         }))
@@ -75,7 +58,7 @@ export default function RobotInputs() {
 
     const handlePartChange = (selectedOptions: any) => {
         setSelectedParts(selectedOptions);
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             parts: selectedOptions
         }))
@@ -111,7 +94,7 @@ export default function RobotInputs() {
     }, [filter.class, filter.type]);
 
     const handleNameChange = (name: string, value: string) => {
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             [name]: value,
         }))
@@ -128,7 +111,7 @@ export default function RobotInputs() {
             setBaseHexagonValues(selectedClass.status);
             setHexagonValues(selectedClass.status);
             setFilter((prev) => ({ ...prev, class: selectedClass.name }));
-            setRobot((prev) => ({
+            setRobotData((prev) => ({
                 ...prev,
                 name: selectedClass.name,
                 description: selectedClass.description,
@@ -142,7 +125,7 @@ export default function RobotInputs() {
     const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedType = event.target.value;
         setFilter((prev) => ({ ...prev, type: selectedType }));
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             type: event.target.value
         }));
@@ -163,7 +146,7 @@ export default function RobotInputs() {
                 dano: baseHexagonValues.dano + selectedPersonality.status.dano,
                 bateria: baseHexagonValues.bateria + selectedPersonality.status.bateria,
             });
-            setRobot((prev) => ({
+            setRobotData((prev) => ({
                 ...prev,
                 personality: selectedPersonality.name,
                 hexagonValues: {
@@ -181,7 +164,7 @@ export default function RobotInputs() {
     const handleRankChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedRank = event.target.value;
         setFilter((prev) => ({ ...prev, rank: selectedRank }));
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             rank: event.target.value
         }));
@@ -195,7 +178,7 @@ export default function RobotInputs() {
             ...prevValues,
             [attribute]: newValue
         }));
-        setRobot((prev) => ({
+        setRobotData((prev) => ({
             ...prev,
             hexagonValues: {
                 ...prev.hexagonValues,
@@ -203,11 +186,7 @@ export default function RobotInputs() {
             }
         }));
     };
-
-    useEffect(() => {
-        console.log("robot", robot)
-    }, [robot])
-
+    
     return (
         <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
             <span className="text-white text-2xl font-bold">Dados do Cria</span>
@@ -308,7 +287,7 @@ export default function RobotInputs() {
                                                 <li>Custo de memória: {tech.value.memoryCost}</li>
                                             }
                                             {tech.value.skill &&
-                                                <li>{tech.value.skill.name} {tech.value.skill.description}</li>
+                                                <li>{tech.value.skill.name}: {tech.value.skill.description}</li>
                                             }
 
                                         </div>
