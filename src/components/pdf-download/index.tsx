@@ -23,7 +23,6 @@ export default function PdfDownload() {
                 <div ref={contentRef} className="mt-5 bg-white p-6 rounded-md shadow-md">
                     <h1 className="text-3xl font-bold text-center mb-6">Ficha do Personagem</h1>
 
-                    {/* Dados do Pivete */}
                     <div className="mb-6">
                         <h2 className="text-2xl font-semibold mb-4">Dados do Pivete</h2>
                         <p><strong>Nome:</strong> {childrenData.name}</p>
@@ -54,8 +53,6 @@ export default function PdfDownload() {
                                 <p className="bg-gray-100 p-4 rounded-b-md">{robotData.personality}</p>
                             </div>
                         </div>
-
-                        {/* Atributos Hexagonais */}
                         <div className="grid grid-cols-3 gap-6 text-center">
                             <div className="flex flex-col items-center">
                                 <Hexagon value={robotData.hexagonValues.durabilidade} />
@@ -83,9 +80,9 @@ export default function PdfDownload() {
                             </div>
                         </div>
 
-                        {/* Peças e Técnicas */}
+
                         <div className="grid grid-cols-2 gap-6 mt-6">
-                            {/* Peças */}
+
                             <div>
                                 <h3 className="bg-blue-600 text-white text-center p-2 rounded-t-md">Peças</h3>
                                 <div className="bg-gray-100 p-4 rounded-b-md">
@@ -102,7 +99,7 @@ export default function PdfDownload() {
                                 </div>
                             </div>
 
-                            {/* Técnicas */}
+
                             <div>
                                 <h3 className="bg-blue-600 text-white text-center p-2 rounded-t-md">Técnicas</h3>
                                 <div className="bg-gray-100 p-4 rounded-b-md">

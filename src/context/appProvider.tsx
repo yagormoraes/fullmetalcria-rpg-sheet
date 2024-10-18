@@ -9,6 +9,10 @@ interface ChildrenData {
     label: string;
     values: string;
   };
+  powers: Array<{ name: string; description: string }>;
+  weaknesses: Array<{ name: string; description: string }>;
+  special: Array<{ name: string; description: string }>;
+  bonds: Array<{ description: string }>;
 }
 
 interface RobotData {
@@ -39,7 +43,6 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-
 export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [childrenData, setChildrenData] = useState<ChildrenData>({
     name: "",
@@ -47,8 +50,11 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     room: "",
     objects: "",
     unique: { label: "Traço único", values: "" },
-});
-
+    powers: [],
+    weaknesses: [],
+    special: [],
+    bonds: [],
+  });
 
   const [robotData, setRobotData] = useState<RobotData>({
     name: "",

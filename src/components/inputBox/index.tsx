@@ -13,16 +13,14 @@ type InputProps = {
 
 
 export default function InputBox({ label, linkedFor, height, value, onChange, placeholder, disable, blockSize }: InputProps) {
-    const handleChange = (event: { target: { value: any; }; }) => {
-        const newValue = event.target.value;
-        onChange(newValue);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        onChange(event.target.value);
     };
-
     return (
         <div className="flex flex-col py-1">
             <label className="text-white font-semibold" htmlFor={linkedFor}>{label}</label>
             
-            <textarea 
+            <input 
                 disabled={disable} 
                 name={linkedFor} 
                 onChange={handleChange}

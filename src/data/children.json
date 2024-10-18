@@ -8,7 +8,39 @@
         "unique": {
             "label": "Escolha um brinquedo",
             "values": "Bolinhas de gude, uma pipa, minitura de T.Rex, etc"
-        }
+        },
+        "powers": [
+            {
+                "name": "Rosto Angelical de Criançinha",
+                "description": "Durante estiver tomando uma bronca, fazer um pedido ou simplesmente aguentar algo estúpido com sua força angelical de criança, você recebe +1 Dado quando usar seu rosto angelical de criança para escapar de uma enrascada."
+            },
+            {
+                "name": "Pirraça",
+                "description": "Fazer pirraça é uma arte milenar. Você esperneia, bate os braços e pernas e fica todo catarrento. Você consegue chamar a atenção de todo mundo ao redor. Quando for usar Pirraça, você recebe +1 Dado em sua Fúria."
+            },
+            {
+                "name": "Eu conheço esse Brinquedo...",
+                "description": "Seus conhecimentos dos brinquedos mais antigos fazem você ser o maior nerd da criançada. Na roda de pivetes, você ainda tira onda com a linha do Iron Max, os novos cornos da Cold Wheels ou a nova casa da Dolly Docket, você conhece tudo."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Pouca Idade",
+                "description": "Você é mais novo, até pra seu bando de crianças. Sua pouca idade te impede de entrar em certos lugares e que as pessoas te levem a sério."
+            }
+        ],
+        "special": [{
+            "name": "Cabeça dura",
+            "description": "Sua teimosia pode ser uma vantagem nas batalhas. Sempre que o resultado de uma rolagem der Empate, você é considerado vencedor daquele embate."
+        }],
+        "bonds": [
+            {
+                "description": "___ meu primo mais velho me subestima demais"
+            },
+            {
+                "description": "___ vê potencial em mim"
+            }
+        ]
     },
     {
         "class": "Ronin",
@@ -19,7 +51,49 @@
         "unique": {
             "label": "Sua antiga criança",
             "values": "Cresceu e te deixou pra lá, recebeu um cria mais novo e te largou, fou proibida pelos pais de continuar com você, etc"
-        }
+        },
+        "powers": [
+            {
+                "name": "Você é um Brinquedo!!",
+                "description": "Para boa parte dos humanos, você não passa de um bonequinho que as crianças brincam, e você sabe usar isso a seu favor. Quando ficar completamente imóvel, você passa despercebido e as pessoas ignoram sua existência, o tornando praticamente invisível, recebendo +1 Dado em sua pilha."
+            },
+            {
+                "name": "Dá pra passar por aqui...",
+                "description": "Você consegue se esgueirar por ambientes considerados impossíveis para os humanos. Frestas, buracos e passagens estreitas, em cima do armário, nada disso é impedimento para você. Receba +1 Dado em sua pilha quando se esgueirar por locais estreitos."
+            },
+            {
+                "name": "Esse é meu poder!",
+                "description": "De alguma forma, você consegue usar suas técnicas fora da batalha. Você pode usar seus golpes e outras habilidades de Cria para superar obstáculos, recebendo +1 Dado em sua pilha quando fizer isso."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Desconfiança",
+                "description": "Você tem pé atrás com os humanos, e isso pode te atrapalhar em momentos críticos."
+            },
+            {
+                "name": "De Fábrica",
+                "description": "Você não é humano, e isso pode ser um empecilho nas mais diversas situações."
+            }
+        ],
+        "special": [{
+            "name": "Eu Não Preciso de Humano Nenhum!",
+            "description": "Você é completamente independente e não precisa de nenhum humano te dando ordens por aí. Uma vez por batalha, você recebe +1 Ponto de Comando durante uma rodada."
+        }, {
+            "name": "Só Dessa Vez...",
+            "description": "Tempos difíceis pedem medidas desesperadas. Quando estiver em apuros, ou seja, com menos da metade dos Pontos de Vida ou com alguma peça quebrada, você pode chamar um pivete que você possua Vínculo para combate ao seu lado. Durante essa união, você recebe +1 em Mira e Dano."
+        }],
+        "bonds": [
+            {
+                "description": "___ é um Cria muito inteligente."
+            },
+            {
+                "description": "___ Conhece minha antiga criança."
+            },
+            {
+                "description": "___ é uma criança muito capaz em combate."
+            }
+        ]
     },
     {
         "class": "Rebelde",
@@ -30,7 +104,42 @@
         "unique": {
             "label": "Escolha uma causa",
             "values": "Direitos dos crias, proteção à natureza, mudança das políticas escolares, descobrir a verdade sobre a Equipe Prego, etc"
-        }
+        },
+        "powers": [
+            {
+                "name": "Junte-se a mim!",
+                "description": "Sua causa é importante, e você consegue convencer as pessoas disso. Você recebe +1 Dado quando usar sua causa para fazer com que as pessoas se tornem suas aliadas e te auxiliem."
+            },
+            {
+                "name": "Suas Amarras não podem me prender!",
+                "description": "A liberdade é a representação da sua alma. Cordas, correntes, regras, todas são a mesma coisa: todas tentam te prender. Como um espírito livre, você diz 'Dane-se!' para elas e faz o que bem entende. Quando tentar se libertar de amarras físicas ou sociais, receba +1 Dado em sua pilha."
+            },
+            {
+                "name": "Discurso no Jutsu!",
+                "description": "Você recebeu o dom de discursar apaixonadamente por horas a fio. Quando fizer um discurso que seus companheiros se enchem de inspiração, eles recebem +1 Dado em suas pilhas na próxima rolagem que fizerem. Você marca uma condição."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Princípios",
+                "description": "Chamar seus princípios de fraqueza pode soar como um insulto, mas a verdade é que existe uma série de coisas que você não faria para segui-los."
+            }
+        ],
+        "special": [{
+            "name": "Eu Faço as Minhas Próprias Regras!",
+            "description": "Você age à sua maneira. Mesmo num combate, suas regras prevalecem. Você pode rolar novamente o tipo de terreno do campo de batalha e ficar com a opção que desejar."
+        }],
+        "bonds": [
+            {
+                "description": "___ Vive numa gaiola, e eu preciso libertá-lo."
+            },
+            {
+                "description": "___ É livre como eu."
+            },
+            {
+                "description": "___ Será uma boa adição à causa."
+            }
+        ]
     },
     {
         "class": "Máscara",
@@ -41,7 +150,43 @@
         "unique": {
             "label": "A identidade secreta",
             "values": "Ao criar uma Máscara, decida também sua identidade secreta. Ela pode até mesmo fazer parte do grupo de personagens. Você pode jogar com sua identidade secreta sempre que quiser, mas quando uma Batalha de Cria começar, você deve trocar para a Máscara."
-        }
+        },
+        "powers": [
+            {
+                "name": "Meu Trabalho Aqui Está Feito",
+                "description": "Você pode desaparecer a plenos vistas, como um fantasma. Seja saindo de fininho no canto ou criando uma enorme cortina de fumaça, uma hora você está ali, na outra não está mais."
+            },
+            {
+                "name": "Lenda Urbana",
+                "description": "Boatos sobre sua existência correm a boca miúda pela cidade, e você pode usá-los a seu favor. Medo, desconfiança, mas nem um ou outro irá o/a impedir de falar dos seus feitos. Quando usar sua reputação a seu favor, você recebe +1 Dado."
+            },
+            {
+                "name": "Spoiler: Era eu o tempo inteiro!",
+                "description": "Você pode chocar as pessoas ao revelar sua identidade secreta. Quando estiver disfarçado, causar um alvoroço ou simplesmente abalar alguém com sua identidade revelada, você remove a máscara numa reviravolta impactante. Ao usar essa informação para chocar as pessoas, você recebe +1 Dado em sua pilha."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Sua identidade verdadeira",
+                "description": "Você usa máscara por um motivo."
+            },
+            {
+                "name": "Máscara",
+                "description": "Às vezes, sua máscara fala com você, como se vocês fossem duas pessoas diferentes."
+            }
+        ],
+        "special": [{
+            "name": "Confiança Mascarada",
+            "description": "Você é coberto por um senso de confiança quando usa sua máscara. Na primeira Rodada de um combate, você sempre age primeiro."
+        }],
+        "bonds": [
+            {
+                "description": "Eu ainda vou superar ___"
+            },
+            {
+                "description": "___ desperdiça seu potencial"
+            }
+        ]
     },
     {
         "class": "Cérebro",
@@ -52,7 +197,36 @@
         "unique": {
             "label": "Escolha uma materia favorita",
             "values": "Ciências, matemática, linguagem, geografia, etc."
-        }
+        },
+        "powers": [
+            {
+                "name": "Eu já li muito sobre isso!",
+                "description": "Você possui um vasto conhecimento sobre uma enorme gama de assuntos. Você sempre sabe uma curiosidade aleatória e pode tirá-la da cartola quando precisar. Você recebe +1 Dado em sua Pilha quando precisar citar um assunto específico."
+            },
+            {
+                "name": "Olhar Científico",
+                "description": "Seu olhar é treinado para encontrar falhas, evidências e tudo mais. Quando avaliar uma situação, lugar ou pessoa, você consegue encontrar detalhes que passaram despercebidos para os outros. Você recebe +1 dado em sua Pilha quando procurar algo atentamente."
+            },
+            {
+                "name": "Deixa que eu arrumo",
+                "description": "Você é capaz de consertar eletrônicos, brinquedos e até mesmo Crias. Uma vez por episódio você pode Consertar uma peça quebrada de um Cria."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Curiosidade que matou o gato",
+                "description": "Sua sede de conhecimento pode te levar a situações perigosas."
+            }
+        ],
+        "special": [{
+            "name": "Mexer nos óculos com estilo",
+            "description": "Você arruma seus óculos e começa a discorrer sobre como tinha um plano o tempo todo. Uma vez por combate, você pode gastar seus dois pontos de Comando para recuperar 3 pontos de Bateria que devem ser usados na próxima rodada de combate."
+        }],
+        "bonds": [
+            {
+                "description": "___ é mais inteligente do que parece e acha que músculos são mais importantes que o cérebro. Vou provar que está errada"
+            }
+        ]
     },
     {
         "class": "Protetor",
@@ -63,7 +237,36 @@
         "unique": {
             "label": "Você protege os outros porque",
             "values": "Já fiz mal pra muita gente, me protegeram quando eu precisei, possuo um inabalável senso de justiça, etc."
-        }
+        },
+        "powers": [
+            {
+                "name": "Passou, Passou",
+                "description": "Você é capaz de consolar os outros e acalmar seus corações. Sempre que algum Pivete estiver com uma Condição, você pode removê-la, tomando a condição para você."
+            },
+            {
+                "name": "Fique atrás de Mim!",
+                "description": "Injustiças e covardia não tem vez com você. Você se interpõe como uma verdadeira barreira para proteger os fracos e oprimidos. Quando defender um companheiro, você recebe +1 dado na pilha para tentar proteger seu amigo."
+            },
+            {
+                "name": "Aura de Liderança",
+                "description": "Você escolhe um pivete com quem tenha vínculo, dando orientações para ele. Se o Pivete seguir suas orientações e for bem-sucedido, ele recebe +2 dados na sua próxima jogada. Você marca uma Condição."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Altruísmo",
+                "description": "Você é bonzinho demais. Você termina sempre pensando nos outros em primeiro lugar e deixando você mesmo por último, chegando a não se preocupar com seu bem estar."
+            }
+        ],
+        "special": [{
+            "name": "Eu estou aqui!",
+            "description": "Você e seu Cria têm uma ligação única. Vocês dividem suas dores e se protegem em todas as ocasiões. Uma vez por Combate, você pode atrair toda a dor destinada a seu Cria ou dar direções certas para a proteção deles. Você poderá absorver até 3 pontos de Dano que seriam causados ao seu Cria, que se convertem em uma Condição para o Protetor."
+        }],
+        "bonds": [
+            {
+                "description": "___ é fraco e deve ser protegido. Sei que posso contar com ___"
+            }
+        ]
     },
     {
         "class": "Blogueira",
@@ -74,7 +277,43 @@
         "unique": {
             "label": "Seu blog é sobre",
             "values": "Moda, crias, fofocas, etc."
-        }
+        },
+        "powers": [
+            {
+                "name": "Sempre Online",
+                "description": "Você sempre tá conectada. Sabe de todas as novidades e todas as fofocas sempre chegam até você. Receba qualquer notícia antes do grupo, e +1 Dado em sua pilha quando tratar de notícias e fofocas da internet."
+            },
+            {
+                "name": "Influencer",
+                "description": "Você pode usar o nome do seu blog para conseguir objetos importantes, favores e até acesso a alguns lugares. Quando usar sua influência para conseguir o que quer, você recebe +1 Dado em sua pilha."
+            },
+            {
+                "name": "Mimos",
+                "description": "Você carrega apetrechos e cacarecos que recebe de patrocinadores do seu blog. No início do Episódio, escolha 1 Objeto Icônico de outro arquétipo para carregar com você."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "O monstro da Fama",
+                "description": "Às vezes ser popular na internet tem seus problemas. Um fã chato, algum hater enchendo o saco."
+            },
+            {
+                "name": "Tudo pelo engajamento",
+                "description": "Às vezes, você se mete em enrascadas para conseguir engajamento para seu Blog."
+            }
+        ],
+        "special": [{
+            "name": "Isso vai dar um Bom Post!",
+            "description": "Você sabe o que gera engajamento. Você recebe uma Condição para transformar um erro em um Acerto e um Acerto em um Breaker."
+        }],
+        "bonds": [
+            {
+                "description": "___ e seu Cria tem um enorme potencial de engajamento."
+            },
+            {
+                "description": "___ é hater do meu Blog."
+            }
+        ]
     },
     {
         "class": "Esforçado",
@@ -85,7 +324,43 @@
         "unique": {
             "label": "Você treina para",
             "values": "Dar orgulho para seus pais, si mesmo, provar que o trabalho duro é o único caminho, etc."
-        }
+        },
+        "powers": [
+            {
+                "name": "Corpo feliz, mente feliz",
+                "description": "Você leva suas capacidades físicas ao limite, e seu treinamento te permite nadar, correr, saltar, levantar e tudo mais. Você recebe +1 Dado em sua pilha nessas atividades."
+            },
+            {
+                "name": "Não vou desistir!",
+                "description": "Quando tudo parece perdido, você ainda é capaz de se levar até o limite. Quando marcar todas as caixas de Condição, você ainda é capaz de agir uma última vez antes de ser tirado de cena."
+            },
+            {
+                "name": "Superar os Limites",
+                "description": "Quando se forçar ir além das suas capacidades para superar para mostrar que é melhor do que algum pivete que possua, você recebe +1 Dado em sua pilha."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Se colocar no limite",
+                "description": "Você se esforça demais para seu próprio bem, por vezes colocando seu corpo e espírito em risco."
+            },
+            {
+                "name": "Segundo melhor",
+                "description": "Parece que por mais que você se esforce, nunca consegue alcançar o topo."
+            }
+        ],
+        "special": [{
+            "name": "Não me subestime!",
+            "description": "Quando seu cria estiver com menos da metade de seus Pontos de Vida, ele recebe um bônus de +2 em Mira, Velocidade ou Dano, à sua escolha."
+        }],
+        "bonds": [
+            {
+                "description": "Eu ainda vou superar ______"
+            },
+            {
+                "description": "___ desperdiça seu potencial"
+            }
+        ]
     },
     {
         "class": "Playboy",
@@ -96,8 +371,42 @@
         "unique": {
             "label": "Você treina para",
             "values": "Para ser o proximo herdeiro da familia, para ter o cria com os equipamentos mais caros, etc."
-        }
-    },{
+        },
+        "powers": [
+            {
+                "name": "Comprar sem Olhar o Preço",
+                "description": "Uma vez por episódio, quando comprar uma Peça através de Marcos, você consegue diminuir seu custo em 1."
+            },
+            {
+                "name": "A Carona Chegou!",
+                "description": "Você tem um carrão de luxo que está à sua disposição para levar você e seus amigos (associados) para onde você quiser. Uma vez por episódio, acione a Carona para fugir de uma enrascada ou chegar em qualquer lugar da sua cidade."
+            },
+            {
+                "name": "Nome de Família",
+                "description": "Sempre que você puder usar a fama e riqueza da sua família para se beneficiar, você recebe +1 dado em sua pilha."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "O Dinheiro Não Compra Tudo",
+                "description": "Mesmo com todos os bens materiais, você não consegue mascarar que no fundo ainda falta alguma coisa."
+            },
+            {
+                "name": "Falta de Noção",
+                "description": "Você não tem muita ideia de como é o mundo real, quanto as coisas custam e como as pessoas vivem."
+            }
+        ],
+        "special": [{
+            "name": "Papai que comprou",
+            "description": "Uma vez por combate, você pode trocar uma de suas peças por uma peça de mesmo valor de memória que você possua."
+        }],
+        "bonds": [
+            {
+                "description": "___ não possui boas maneiras. Posso ensinar ___ sobre as coisas boas vida."
+            }
+        ]
+    },
+    {
         "class": "Esportista",
         "img": "/assets/pivete-esportista.png",
         "altText": "pivete-esportista",
@@ -106,6 +415,39 @@
         "unique": {
             "label": "Você treina para",
             "values": "Ser o mais forte, ser o mais rápido, ser o mais gracioso, etc."
-        }
+        },
+        "powers": [
+            {
+                "name": "Espírito Competitivo",
+                "description": "Você foi forjado em competições e disputas, fazendo delas seu lar. Sempre que estiver em uma competição, você recebe +1 Dado em sua pilha."
+            },
+            {
+                "name": "Capitão do Time",
+                "description": "Você sabe trabalhar bem em grupo. Quando estiver agindo em conjunto com um ou mais Pivetes com quem você possua vínculo, você recebe +1 Dado em sua pilha."
+            },
+            {
+                "name": "Repescagem",
+                "description": "Sua resiliência atlética é invejável. Uma vez por sessão, quando o Pivete falhar em uma rolagem, você pode refazê-la, ficando com o segundo resultado."
+            }
+        ],
+        "weaknesses": [
+            {
+                "name": "Competitivo até demais",
+                "description": "Sua competitividade excessiva pode te colocar em situações complicadas."
+            },
+            {
+                "name": "A Responsabilidade Esportiva",
+                "description": "O seu esporte é um compromisso que ocupa boa parte da sua vida, às vezes mais do que você gostaria."
+            }
+        ],
+        "special": [{
+            "name": "Nós treinamos pra isso!!",
+            "description": "O Cria do Esportista é imune a efeitos negativos do campo de batalha."
+        }],
+        "bonds": [
+            {
+                "description": "___ é um bom colega de time. A preguiça de ___ é frustrante."
+            }
+        ]
     }
 ]

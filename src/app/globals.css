@@ -47,9 +47,10 @@ input[type="number"] {
 }
 
 .clip-caption {
-    width: 100%;
+    width: 50%;
     position: absolute;
     top: 50%;
+    left: 25%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -82,4 +83,3 @@ input[type="number"] {
     clip-path: url("#hexagon-clip");
     z-index: -1;
 }
-
