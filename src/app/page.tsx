@@ -4,9 +4,6 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Banner from "@/components/banner";
 import WarningPlayers from "@/components/warning-players";
-import SelectChildren from "@/components/select-children";
-import { Children } from "@/types/children";
-import ChildrenInputs from "@/components/children-inputs";
 import RobotInputs from "@/components/robot-inputs";
 import PdfDownload from "@/components/pdf-download"
 import ChildrenSelect from "@/components/children-select";

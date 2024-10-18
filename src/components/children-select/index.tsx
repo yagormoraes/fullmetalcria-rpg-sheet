@@ -1,8 +1,9 @@
 import Card from "../card";
 import data from "../../data/children.json";
 import InputBox from "../inputBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "@/context/appProvider";
+import TextareaBox from "../textareaBox";
 
 export default function ChildrenSelect() {
     const { childrenData, setChildrenData } = useAppContext();
@@ -13,7 +14,7 @@ export default function ChildrenSelect() {
         powers: [],
         weaknesses: [],
         special: [],
-        bonds: []
+        bonds: ""
     });
 
     const handleInputChange = (name: string, value: string) => {
@@ -95,23 +96,20 @@ export default function ChildrenSelect() {
                     />
                 </div>
                 <div className="grid grid-cols-3 gap-3">
-                    <InputBox
+                    <TextareaBox
                         label="Seu quarto é:"
                         linkedFor="children-room"
                         height="h-20"
-                        blockSize
                         placeholder={placeholders.room}
                         onChange={(value: string) => handleInputChange("room", value)}
                     />
-                    <InputBox
+                    <TextareaBox
                         label="Objetos icônicos:"
                         linkedFor="children-object"
                         height="h-20"
-                        blockSize
                         placeholder={placeholders.objects}
-                        onChange={(value: string) => handleInputChange("objects", value)}
-                    />
-                    <InputBox
+                        onChange={(value: string) => handleInputChange("objects", value)} />
+                    <TextareaBox
                         label={`${childrenData.unique.label}:`}
                         linkedFor="children-unique"
                         placeholder={placeholders.uniqueValue}
@@ -129,84 +127,84 @@ export default function ChildrenSelect() {
                     />
                 </div>
 
-                <div className="mb-6">
-                    <h2 className="font-bold text-center text-white p-2 rounded-t-md">
-                        Poderes
+                <div className="flex flex-col mt-2">
+                    <h2 className="font-bold text-white rounded-t-md">
+                        Poderes:
                     </h2>
-                    <div className="grid grid-cols-3 gap-4 p-4 bg-gray-200 rounded-b-md">
+                    <div className="bg-orange-300 h-72 grid grid-cols-3 gap-4 rounded-md">
                         {childrenData.powers.map((power: any, index: number) => (
-                            <div key={index} className="p-4 bg-white shadow-md rounded-lg">
-                                <h3 className="font-bold text-gray-700">{power.name}</h3>
-                                <textarea
-                                    className="text-sm text-gray-600 w-full border rounded-lg p-2"
-                                    value={power.description}
+                            <div key={index} className="rounded-lg">
+                                <TextareaBox
+                                    label={power.name}
+                                    linkedFor="children-powers"
+                                    height="h-60"
+                                    placeholder={power.description}
                                     onChange={(e) => handleEditableChange(index, "powers", e.target.value)}
-                                    disabled
+                                    disable
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="mb-6">
-                    <h2 className=" font-bold text-center text-white p-2 rounded-t-md">
-                        Fraquezas
+                <div className=" mt-2">
+                    <h2 className=" font-bold text-white">
+                        Fraquezas:
                     </h2>
-                    <div className="grid grid-cols-2 gap-4 p-4 bg-gray-200 rounded-b-md">
+                    <div className="bg-orange-300 h-48 grid grid-cols-2 gap-4 rounded-md">
                         {childrenData.weaknesses.map((weakness: any, index: number) => (
-                            <div key={index} className="p-4 bg-white shadow-md rounded-lg">
-                                <h3 className="font-bold text-gray-700">{weakness.name}</h3>
-                                <textarea
-                                    className="text-sm text-gray-600 w-full border rounded-lg p-2"
-                                    value={weakness.description}
+                            <div key={index} className="rounded-lg">
+                                <TextareaBox
+                                    label={weakness.name}
+                                    linkedFor="children-weakness"
+                                    height="h-36"
+                                    placeholder={weakness.description}
                                     onChange={(e) => handleEditableChange(index, "weaknesses", e.target.value)}
-                                    disabled
+                                    disable
                                 />
+
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="mt-2 grid grid-cols-2 gap-4" >
                     <div >
-                        <h2 className="font-bold text-center text-white p-2 rounded-t-md">
-                            Especial
+                        <h2 className="font-bold text-white">
+                            Especial:
                         </h2>
-                        <div className="p-4 bg-gray-200 rounded-b-md">
+                        <div className="bg-orange-300 h-92 rounded-md">
                             {childrenData.special.map((special: any, index: number) => (
-                                <div key={index} className="p-4 bg-white shadow-md rounded-lg">
-                                    <h3 className="font-bold text-gray-700">{special.name}</h3>
-                                    <textarea
-                                        className="text-sm text-gray-600 w-full border rounded-lg p-2"
-                                        value={special.description}
+                                <div key={index} className="rounded-lg">
+                                    <TextareaBox
+                                        label={special.name}
+                                        linkedFor="children-special"
+                                        height="h-36"
+                                        placeholder={special.description}
                                         onChange={(e) => handleEditableChange(index, "special", e.target.value)}
-                                        disabled
+                                        disable
                                     />
                                 </div>
+
                             ))}
                         </div>
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-bold text-center text-white p-2 rounded-t-md">
-                            Vínculos
+                        <h2 className="font-bold text-white">
+                            Vínculos:
                         </h2>
-                        <div className="p-4 bg-gray-200 rounded-b-md">
-                            {childrenData.bonds.map((bond: any, index: number) => (
-                                <div key={index} className="p-4 bg-white shadow-md rounded-lg">
-                                    <textarea
-                                        className="text-sm text-gray-600 w-full border rounded-lg p-2"
-                                        placeholder={bond.description}
-                                        onChange={(e) => handleEditableChange(index, "bonds", e.target.value)}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        <TextareaBox
+                            linkedFor="children-bonds"
+                            height="h-[11.75rem]"
+                            blockSize
+                            placeholder={childrenData.bonds}
+                            onChange={(value: string) => handleInputChange("bonds", value)} label={""}                        />
                     </div>
                 </div>
-
-
             </div>
+
+
         </>
     );
 }

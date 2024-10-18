@@ -12,7 +12,7 @@ interface ChildrenData {
   powers: Array<{ name: string; description: string }>;
   weaknesses: Array<{ name: string; description: string }>;
   special: Array<{ name: string; description: string }>;
-  bonds: Array<{ description: string }>;
+  bonds: string
 }
 
 interface RobotData {
@@ -24,10 +24,10 @@ interface RobotData {
   rank: string;
   hexagonValues: {
     durabilidade: number;
+    dano: number;
     mira: number;
     velocidade: number;
     carapaca: number;
-    dano: number;
     bateria: number;
   };
   techs: any[];
@@ -53,7 +53,7 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     powers: [],
     weaknesses: [],
     special: [],
-    bonds: [],
+    bonds: ""
   });
 
   const [robotData, setRobotData] = useState<RobotData>({
@@ -65,10 +65,10 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     rank: "",
     hexagonValues: {
       durabilidade: 0,
+      dano: 0,
       mira: 0,
       velocidade: 0,
       carapaca: 0,
-      dano: 0,
       bateria: 0,
     },
     techs: [],
@@ -81,6 +81,8 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+
 
 export const useAppContext = () => {
   const context = useContext(AppContext);

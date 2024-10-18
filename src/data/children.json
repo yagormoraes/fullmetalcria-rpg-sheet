@@ -33,14 +33,7 @@
             "name": "Cabeça dura",
             "description": "Sua teimosia pode ser uma vantagem nas batalhas. Sempre que o resultado de uma rolagem der Empate, você é considerado vencedor daquele embate."
         }],
-        "bonds": [
-            {
-                "description": "___ meu primo mais velho me subestima demais"
-            },
-            {
-                "description": "___ vê potencial em mim"
-            }
-        ]
+        "bonds": "___ meu primo mais velho me subestima demais, ___ vê potencial em mim"
     },
     {
         "class": "Ronin",
@@ -83,17 +76,7 @@
             "name": "Só Dessa Vez...",
             "description": "Tempos difíceis pedem medidas desesperadas. Quando estiver em apuros, ou seja, com menos da metade dos Pontos de Vida ou com alguma peça quebrada, você pode chamar um pivete que você possua Vínculo para combate ao seu lado. Durante essa união, você recebe +1 em Mira e Dano."
         }],
-        "bonds": [
-            {
-                "description": "___ é um Cria muito inteligente."
-            },
-            {
-                "description": "___ Conhece minha antiga criança."
-            },
-            {
-                "description": "___ é uma criança muito capaz em combate."
-            }
-        ]
+        "bonds":"___ é um Cria muito inteligente, ___ Conhece minha antiga criança, ___ é uma criança muito capaz em combate."
     },
     {
         "class": "Rebelde",
@@ -129,17 +112,7 @@
             "name": "Eu Faço as Minhas Próprias Regras!",
             "description": "Você age à sua maneira. Mesmo num combate, suas regras prevalecem. Você pode rolar novamente o tipo de terreno do campo de batalha e ficar com a opção que desejar."
         }],
-        "bonds": [
-            {
-                "description": "___ Vive numa gaiola, e eu preciso libertá-lo."
-            },
-            {
-                "description": "___ É livre como eu."
-            },
-            {
-                "description": "___ Será uma boa adição à causa."
-            }
-        ]
+        "bonds": "___ Vive numa gaiola, e eu preciso libertá-lo, ___ É livre como eu, ___ Será uma boa adição à causa."
     },
     {
         "class": "Máscara",
@@ -179,14 +152,7 @@
             "name": "Confiança Mascarada",
             "description": "Você é coberto por um senso de confiança quando usa sua máscara. Na primeira Rodada de um combate, você sempre age primeiro."
         }],
-        "bonds": [
-            {
-                "description": "Eu ainda vou superar ___"
-            },
-            {
-                "description": "___ desperdiça seu potencial"
-            }
-        ]
+        "bonds": "Eu ainda vou superar ___, ___ desperdiça seu potencial"
     },
     {
         "class": "Cérebro",
@@ -222,11 +188,7 @@
             "name": "Mexer nos óculos com estilo",
             "description": "Você arruma seus óculos e começa a discorrer sobre como tinha um plano o tempo todo. Uma vez por combate, você pode gastar seus dois pontos de Comando para recuperar 3 pontos de Bateria que devem ser usados na próxima rodada de combate."
         }],
-        "bonds": [
-            {
-                "description": "___ é mais inteligente do que parece e acha que músculos são mais importantes que o cérebro. Vou provar que está errada"
-            }
-        ]
+        "bonds": "___ é mais inteligente do que parece e acha que músculos são mais importantes que o cérebro. Vou provar que está errada"
     },
     {
         "class": "Protetor",
@@ -262,11 +224,7 @@
             "name": "Eu estou aqui!",
             "description": "Você e seu Cria têm uma ligação única. Vocês dividem suas dores e se protegem em todas as ocasiões. Uma vez por Combate, você pode atrair toda a dor destinada a seu Cria ou dar direções certas para a proteção deles. Você poderá absorver até 3 pontos de Dano que seriam causados ao seu Cria, que se convertem em uma Condição para o Protetor."
         }],
-        "bonds": [
-            {
-                "description": "___ é fraco e deve ser protegido. Sei que posso contar com ___"
-            }
-        ]
+        "bonds": "___ é fraco e deve ser protegido. Sei que posso contar com ___"
     },
     {
         "class": "Blogueira",
@@ -306,14 +264,7 @@
             "name": "Isso vai dar um Bom Post!",
             "description": "Você sabe o que gera engajamento. Você recebe uma Condição para transformar um erro em um Acerto e um Acerto em um Breaker."
         }],
-        "bonds": [
-            {
-                "description": "___ e seu Cria tem um enorme potencial de engajamento."
-            },
-            {
-                "description": "___ é hater do meu Blog."
-            }
-        ]
+        "bonds": "___ e seu Cria tem um enorme potencial de engajamento, ___ é hater do meu Blog."
     },
     {
         "class": "Esforçado",
@@ -353,14 +304,7 @@
             "name": "Não me subestime!",
             "description": "Quando seu cria estiver com menos da metade de seus Pontos de Vida, ele recebe um bônus de +2 em Mira, Velocidade ou Dano, à sua escolha."
         }],
-        "bonds": [
-            {
-                "description": "Eu ainda vou superar ______"
-            },
-            {
-                "description": "___ desperdiça seu potencial"
-            }
-        ]
+        "bonds": "Eu ainda vou superar ______, ___ desperdiça seu potencial"
     },
     {
         "class": "Playboy",
@@ -400,11 +344,7 @@
             "name": "Papai que comprou",
             "description": "Uma vez por combate, você pode trocar uma de suas peças por uma peça de mesmo valor de memória que você possua."
         }],
-        "bonds": [
-            {
-                "description": "___ não possui boas maneiras. Posso ensinar ___ sobre as coisas boas vida."
-            }
-        ]
+        "bonds": "___ não possui boas maneiras. Posso ensinar ___ sobre as coisas boas vida."
     },
     {
         "class": "Esportista",
@@ -444,10 +384,6 @@
             "name": "Nós treinamos pra isso!!",
             "description": "O Cria do Esportista é imune a efeitos negativos do campo de batalha."
         }],
-        "bonds": [
-            {
-                "description": "___ é um bom colega de time. A preguiça de ___ é frustrante."
-            }
-        ]
+        "bonds": "___ é um bom colega de time. A preguiça de ___ é frustrante."
     }
 ]

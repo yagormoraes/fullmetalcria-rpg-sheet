@@ -23,18 +23,6 @@ export default function RobotInputs() {
         rank: ""
     });
 
-    const [baseHexagonValues, setBaseHexagonValues] = useState({
-        durabilidade: 0,
-        mira: 0,
-        velocidade: 0,
-        carapaca: 0,
-        dano: 0,
-        bateria: 0
-    });
-
-    const [hexagonValues, setHexagonValues] = useState(baseHexagonValues);
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
     const [filteredParts, setFilteredParts] = useState([]);
     const [filteredTechniques, setFilteredTechniques] = useState([]);
     const [selectedParts, setSelectedParts] = useState([]);
@@ -48,16 +36,12 @@ export default function RobotInputs() {
     };
 
     const handleHexagonValueChange = (attribute, newValue) => {
-        setHexagonValues((prevValues) => ({
-            ...prevValues,
-            [attribute]: newValue
-        }));
         setRobotData((prev) => ({
             ...prev,
             hexagonValues: {
                 ...prev.hexagonValues,
-                [attribute]: newValue
-            }
+                [attribute]: newValue,
+            },
         }));
     };
 
@@ -90,10 +74,12 @@ export default function RobotInputs() {
     const handleClassChange = (event: { target: { value: string; }; }) => {
         const selectedClass = robotClasses.find((rc) => rc.name === event.target.value);
         if (selectedClass) {
-            setName(selectedClass.name);
-            setDescription(selectedClass.description);
-            setBaseHexagonValues(selectedClass.status);
-            setHexagonValues(selectedClass.status);
+            setRobotData((prev) => ({
+                ...prev,
+                name: selectedClass.name,
+                description: selectedClass.description,
+                hexagonValues: selectedClass.status, 
+            }));
             handleFilterChange('class', selectedClass.name);
         }
     };
@@ -101,14 +87,17 @@ export default function RobotInputs() {
     const handlePersonalityChange = (event: { target: { value: string; }; }) => {
         const selectedPersonality = robotPersonalities.find((rp) => rp.name.toLowerCase() === event.target.value.toLowerCase());
         if (selectedPersonality) {
-            setHexagonValues({
-                durabilidade: baseHexagonValues.durabilidade + selectedPersonality.status.durabilidade,
-                mira: baseHexagonValues.mira + selectedPersonality.status.mira,
-                velocidade: baseHexagonValues.velocidade + selectedPersonality.status.velocidade,
-                carapaca: baseHexagonValues.carapaca + selectedPersonality.status.carapaca,
-                dano: baseHexagonValues.dano + selectedPersonality.status.dano,
-                bateria: baseHexagonValues.bateria + selectedPersonality.status.bateria,
-            });
+            setRobotData((prev) => ({
+                ...prev,
+                hexagonValues: {
+                    durabilidade: prev.hexagonValues.durabilidade + selectedPersonality.status.durabilidade,
+                    dano: prev.hexagonValues.dano + selectedPersonality.status.dano,
+                    mira: prev.hexagonValues.mira + selectedPersonality.status.mira,
+                    velocidade: prev.hexagonValues.velocidade + selectedPersonality.status.velocidade,
+                    carapaca: prev.hexagonValues.carapaca + selectedPersonality.status.carapaca,
+                    bateria: prev.hexagonValues.bateria + selectedPersonality.status.bateria,
+                },
+            }));
             handleFilterChange('personality', selectedPersonality.name);
         }
     };
@@ -139,18 +128,18 @@ export default function RobotInputs() {
                 <SelectBox label="Rank:" data={ranks} placeholder="Qual seu rank?" linkedFor="robot-rank" onChange={(e) => handleFilterChange('rank', e.target.value)} value={filter.rank} />
             </div>
 
-            {(name && description) && (
+            {robotData.name && robotData.description && (
                 <div className="text-white mt-4">
-                    <p><strong>{name}:</strong> {description}</p>
+                    <p><strong>{robotData.name}:</strong> {robotData.description}</p>
                 </div>
             )}
-            
+
             <div className="grid grid-cols-3 gap-3 mt-6">
-                {Object.keys(hexagonValues).map((attribute) => (
+                {Object.keys(robotData.hexagonValues).map((attribute) => (
                     <HexagonInput
                         key={attribute}
                         label={attribute.charAt(0).toUpperCase() + attribute.slice(1)}
-                        value={hexagonValues[attribute]}
+                        value={robotData.hexagonValues[attribute]}
                         onChange={(e) => handleHexagonValueChange(attribute, Number(e.target.value))}
                     />
                 ))}
