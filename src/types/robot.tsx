@@ -3,7 +3,7 @@ export interface Robot {
     description: string
     status: {
         durabilidade: number
-        : number
+        mira: number
         velocidade: number
         carapaca: number
         dano: number

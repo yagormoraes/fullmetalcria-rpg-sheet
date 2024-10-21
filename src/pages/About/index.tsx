@@ -1,12 +1,7 @@
 import RootLayout from "@/app/layout";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 export default function AboutPage() {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleDarkMode = () => setDarkMode(!darkMode);
 
     return (
         <>

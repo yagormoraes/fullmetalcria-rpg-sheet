@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import Banner from "@/components/banner";
 import WarningPlayers from "@/components/warning-players";
 import RobotInputs from "@/components/robot-inputs";
