@@ -132,7 +132,7 @@ export default function RobotInputs() {
         <div className="flex flex-col bg-orange-400 p-2 m-5 rounded-lg">
             <span className="text-white text-2xl font-bold">Dados do Cria</span>
 
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 <InputBox blockSize onChange={(value) => handleInputChange("name", value)} label="Nome:" linkedFor="robot-name" height="h-8" />
                 <SelectBox
                     label="Chassi:"
@@ -160,7 +160,7 @@ export default function RobotInputs() {
                 </div>
             )}
 
-            <div className="grid grid-cols-3 gap-3 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
                 {hexagonAttributes.map((attribute) => (
                     <HexagonInput
                         key={attribute}
@@ -171,7 +171,7 @@ export default function RobotInputs() {
                 ))}
             </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-6">
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-stone-400 rounded-lg p-4">
                     <h3 className="text-white font-semibold">Peças</h3>
                     <Select

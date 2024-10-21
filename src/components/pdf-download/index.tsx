@@ -2,12 +2,11 @@ import { useAppContext } from "@/context/appProvider";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Hexagon from "../hexagon";
-import "./style.css"
+import "./style.css"; // Certifique-se de que este arquivo tenha as definições para impressão (print CSS)
 
 export default function PdfDownload() {
     const contentRef = useRef(null);
     const { childrenData, robotData } = useAppContext();
-    console.log(robotData)
     const handlePrint = useReactToPrint({ contentRef });
 
     return (
@@ -19,8 +18,8 @@ export default function PdfDownload() {
                 >
                     Click para baixar a ficha
                 </button>
-                <div ref={contentRef} className="pdf-content mt-5 bg-white p-6 rounded-md shadow-md">
 
+                <div ref={contentRef} className="pdf-content mt-5 bg-white p-6 rounded-md shadow-md">
                     <div className="page-pivete">
                         <h1 className="text-3xl font-bold text-center mb-6">Ficha do Pivete</h1>
                         <div className="mb-6">
@@ -45,14 +44,14 @@ export default function PdfDownload() {
                             <p><strong>Vínculos:</strong> {childrenData.bonds}</p>
                         </div>
                     </div>
-
-                    <div className="page-break" />
+                    <div className="page-break"></div>
 
                     <div className="page-cria">
                         <h1 className="text-3xl font-bold text-center mb-6">Ficha do Cria</h1>
                         <div className="bg-gray-200 p-5 rounded-lg">
                             <h2 className="text-2xl font-semibold mb-4">Dados do Cria</h2>
-                            <div className="grid grid-cols-5 gap-6 text-center mb-6">
+                            
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center mb-6">
                                 <div>
                                     <h3 className="bg-gray-400 text-white p-2 rounded-t-md">Nome</h3>
                                     <p className="bg-gray-100 p-4 rounded-b-md">{robotData.name}</p>
@@ -75,7 +74,7 @@ export default function PdfDownload() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-3 gap-6 text-center">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 text-center">
                                 <div className="flex flex-col items-center">
                                     <Hexagon value={robotData.hexagonValues.durabilidade} />
                                     <p className="mt-2">DURABILIDADE</p>
@@ -89,20 +88,20 @@ export default function PdfDownload() {
                                     <p className="mt-2">MIRA</p>
                                 </div>
                                 <div className="flex flex-col items-center">
-                                    <Hexagon value={robotData.hexagonValues.velocidade}/>
+                                    <Hexagon value={robotData.hexagonValues.velocidade} />
                                     <p className="mt-2">VELOCIDADE</p>
                                 </div>
                                 <div className="flex flex-col items-center">
-                                    <Hexagon value={robotData.hexagonValues.carapaca}/>
+                                    <Hexagon value={robotData.hexagonValues.carapaca} />
                                     <p className="mt-2">CARAPAÇA</p>
                                 </div>
                                 <div className="flex flex-col items-center">
-                                    <Hexagon value={robotData.hexagonValues.bateria}/>
+                                    <Hexagon value={robotData.hexagonValues.bateria} />
                                     <p className="mt-2">BATERIA</p>
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-6 mt-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                                 <div className="bg-stone-400 p-4 rounded-lg">
                                     <h3 className="bg-blue-600 text-white text-center p-2 rounded-t-md text-sm">Peças</h3>
                                     <div className="bg-gray-100 p-4 rounded-b-md text-sm">
@@ -140,5 +139,3 @@ export default function PdfDownload() {
         </>
     );
 }
-
-
