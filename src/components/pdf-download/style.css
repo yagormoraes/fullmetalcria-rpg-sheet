@@ -1,0 +1,33 @@
+@media print {
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+    .pdf-content {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        box-sizing: border-box;
+        background-color: white;
+        font-size: 12pt;
+        zoom: 0.8
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    .page-pivete,
+    .page-cria {
+        page-break-inside: avoid;
+    }
+
+    .page-cria .text-sm {
+        font-size: 10pt;
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
