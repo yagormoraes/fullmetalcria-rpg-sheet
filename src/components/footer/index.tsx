@@ -12,7 +12,7 @@ export default function Footer() {
                 <p className="font-bold">Links Úteis</p>
                 <ul className="list-none space-y-1">
                     <li>
-                        <Link href="/sobre">
+                        <Link href="/About">
                             Sobre
                         </Link>
                     </li>
