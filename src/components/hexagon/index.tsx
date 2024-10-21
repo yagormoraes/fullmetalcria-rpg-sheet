@@ -1,6 +1,6 @@
 
 type HexagonProps = {
-    value: any
+    value: number
 }
 
 export default function Hexagon({value}: HexagonProps) {

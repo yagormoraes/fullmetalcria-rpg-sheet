@@ -4,14 +4,12 @@ import { useReactToPrint } from "react-to-print";
 import Hexagon from "../hexagon";
 import "./style.css"
 
-
-
 export default function PdfDownload() {
-
-
-    const contentRef = useRef(null)
+    const contentRef = useRef(null);
     const { childrenData, robotData } = useAppContext();
+    console.log(robotData)
     const handlePrint = useReactToPrint({ contentRef });
+
     return (
         <>
             <div className="bg-slate-400 mx-5 p-4 rounded-lg shadow-lg">
@@ -22,8 +20,7 @@ export default function PdfDownload() {
                     Click para baixar a ficha
                 </button>
                 <div ref={contentRef} className="pdf-content mt-5 bg-white p-6 rounded-md shadow-md">
-                    
-                    {/* Dados do Pivete */}
+
                     <div className="page-pivete">
                         <h1 className="text-3xl font-bold text-center mb-6">Ficha do Pivete</h1>
                         <div className="mb-6">
@@ -49,10 +46,8 @@ export default function PdfDownload() {
                         </div>
                     </div>
 
-                    {/* Quebra de página após os dados do Pivete */}
                     <div className="page-break" />
 
-                    {/* Dados do Cria */}
                     <div className="page-cria">
                         <h1 className="text-3xl font-bold text-center mb-6">Ficha do Cria</h1>
                         <div className="bg-gray-200 p-5 rounded-lg">
@@ -79,6 +74,7 @@ export default function PdfDownload() {
                                     <p className="bg-gray-100 p-4 rounded-b-md">{robotData.rank}</p>
                                 </div>
                             </div>
+
                             <div className="grid grid-cols-3 gap-6 text-center">
                                 <div className="flex flex-col items-center">
                                     <Hexagon value={robotData.hexagonValues.durabilidade} />
@@ -110,13 +106,14 @@ export default function PdfDownload() {
                                 <div className="bg-stone-400 p-4 rounded-lg">
                                     <h3 className="bg-blue-600 text-white text-center p-2 rounded-t-md text-sm">Peças</h3>
                                     <div className="bg-gray-100 p-4 rounded-b-md text-sm">
-                                        {robotData.parts.map((part, index) => (
+                                        {robotData.parts.map((partOption, index) => (
                                             <div key={index} className="mb-2">
-                                                <p><strong>Nome:</strong> {part.label}</p>
-                                                <p><strong>Tipo:</strong> {part.value.type}</p>
-                                                {part.value.memoryCost && <p><strong>Custo de Memória:</strong> {part.value.memoryCost}</p>}
-                                                {part.value.skill && (
-                                                    <p><strong>{part.value.skill.name}:</strong> {part.value.skill.description}</p>
+                                                <p><strong>Nome:</strong> {partOption.name}</p>
+                                                <p><strong>Tipo:</strong> {partOption.type}</p>
+                                                {partOption.memoryCost && <p><strong>Custo de Memória:</strong> {partOption.memoryCost}</p>}
+                                                {partOption.location && <p><strong>Posição:</strong> {partOption.location}</p>}
+                                                {partOption.skill && (
+                                                    <p><strong>{partOption.skill.name}:</strong> {partOption.skill.description}</p>
                                                 )}
                                             </div>
                                         ))}
@@ -125,12 +122,12 @@ export default function PdfDownload() {
                                 <div className="bg-stone-400 p-4 rounded-lg">
                                     <h3 className="bg-blue-600 text-white text-center p-2 rounded-t-md text-sm">Técnicas</h3>
                                     <div className="bg-gray-100 p-4 rounded-b-md text-sm">
-                                        {robotData.techs.map((tech, index) => (
+                                        {robotData.techs.map((techOption, index) => (
                                             <div key={index} className="mb-2">
-                                                <p><strong>Nome:</strong> {tech.value.name}</p>
-                                                <p><strong>Tipo:</strong> {tech.value.type}</p>
-                                                <p><strong>Custo de Bateria:</strong> {tech.value.battery}</p>
-                                                <p><strong>Descrição:</strong> {tech.value.description}</p>
+                                                <p><strong>Nome:</strong> {techOption.name}</p>
+                                                <p><strong>Tipo:</strong> {techOption.type}</p>
+                                                <p><strong>Custo de Bateria:</strong> {techOption.battery}</p>
+                                                <p><strong>Descrição:</strong> {techOption.description}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -143,3 +140,5 @@ export default function PdfDownload() {
         </>
     );
 }
+
+

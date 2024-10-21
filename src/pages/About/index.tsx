@@ -1,8 +1,6 @@
 import RootLayout from "@/app/layout";
-import {  useState } from "react";
 
 export default function AboutPage() {
-
     return (
         <>
             <RootLayout>

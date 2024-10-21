@@ -1,8 +1,8 @@
 import Card from "../card";
 import data from "../../data/children.json";
 import InputBox from "../inputBox";
-import { useEffect, useState } from "react";
-import { useAppContext } from "@/context/appProvider";
+import { useState } from "react";
+import { ChildrenData, Power, Special, useAppContext, Weakness } from "@/context/appProvider";
 import TextareaBox from "../textareaBox";
 
 export default function ChildrenSelect() {
@@ -11,21 +11,39 @@ export default function ChildrenSelect() {
         room: "",
         objects: "",
         uniqueValue: "",
-        powers: [],
-        weaknesses: [],
-        special: [],
+        powers: [] as Power[],
+        weaknesses: [] as Weakness[],
+        special: [] as Special[],
         bonds: ""
     });
 
-    const handleInputChange = (name: string, value: string) => {
-        setChildrenData((prev: any) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
+    const handleInputChange = (name: keyof ChildrenData, value: string) => {
+        setChildrenData((prev) => {
+          if (name === 'name' || name === 'class' || name === 'room' || name === 'objects' || name === 'bonds') {
+            return {
+              ...prev,
+              [name]: value,
+            };
+          }
+          return prev;
+        });
+      };
+      
+      
 
-    const handleCardSelect = (selectedClass: string, label: string, room: string, objects: string, values: string, powers: any, weaknesses: any, special: any, bonds: any) => {
-        setChildrenData((prev: { unique: any; powers: any; weaknesses: any; special: any; bonds: any }) => ({
+
+    const handleCardSelect = (
+        selectedClass: string,
+        label: string,
+        room: string,
+        objects: string,
+        values: string,
+        powers: Power[],
+        weaknesses: Weakness[],
+        special: Special[],
+        bonds: string
+    ) => {
+        setChildrenData((prev: ChildrenData) => ({
             ...prev,
             class: selectedClass,
             unique: { ...prev.unique, label },
@@ -46,9 +64,10 @@ export default function ChildrenSelect() {
         });
     };
 
-    const handleEditableChange = (index: number, section: string, value: string) => {
-        setChildrenData((prev: any) => {
-            const updatedSection = [...prev[section]];
+
+    const handleEditableChange = (index: number, section: keyof ChildrenData, value: string) => {
+        setChildrenData((prev: ChildrenData) => {
+            const updatedSection = [...(prev[section] as Power[] | Weakness[] | Special[])];
             updatedSection[index].description = value;
             return {
                 ...prev,
@@ -56,6 +75,7 @@ export default function ChildrenSelect() {
             };
         });
     };
+
 
     return (
         <>
@@ -118,8 +138,8 @@ export default function ChildrenSelect() {
                                 ? "h-24"
                                 : "h-20"
                         }
-                        onChange={(value: any) =>
-                            setChildrenData((prev: { unique: any }) => ({
+                        onChange={(value: string) =>
+                            setChildrenData((prev: ChildrenData) => ({
                                 ...prev,
                                 unique: { ...prev.unique, values: value },
                             }))
@@ -132,14 +152,14 @@ export default function ChildrenSelect() {
                         Poderes:
                     </h2>
                     <div className="bg-orange-300 h-72 grid grid-cols-3 gap-4 rounded-md">
-                        {childrenData.powers.map((power: any, index: number) => (
+                        {childrenData.powers.map((power: Power, index: number) => (
                             <div key={index} className="rounded-lg">
                                 <TextareaBox
                                     label={power.name}
                                     linkedFor="children-powers"
                                     height="h-60"
                                     placeholder={power.description}
-                                    onChange={(e) => handleEditableChange(index, "powers", e.target.value)}
+                                    onChange={(e) => handleEditableChange(index, "powers", e)}
                                     disable
                                 />
                             </div>
@@ -152,14 +172,14 @@ export default function ChildrenSelect() {
                         Fraquezas:
                     </h2>
                     <div className="bg-orange-300 h-48 grid grid-cols-2 gap-4 rounded-md">
-                        {childrenData.weaknesses.map((weakness: any, index: number) => (
+                        {childrenData.weaknesses.map((weakness: Weakness, index: number) => (
                             <div key={index} className="rounded-lg">
                                 <TextareaBox
                                     label={weakness.name}
                                     linkedFor="children-weakness"
                                     height="h-36"
                                     placeholder={weakness.description}
-                                    onChange={(e) => handleEditableChange(index, "weaknesses", e.target.value)}
+                                    onChange={(e) => handleEditableChange(index, "weaknesses", e)}
                                     disable
                                 />
 
@@ -174,14 +194,14 @@ export default function ChildrenSelect() {
                             Especial:
                         </h2>
                         <div className="bg-orange-300 h-92 rounded-md">
-                            {childrenData.special.map((special: any, index: number) => (
+                            {childrenData.special.map((special: Special, index: number) => (
                                 <div key={index} className="rounded-lg">
                                     <TextareaBox
                                         label={special.name}
                                         linkedFor="children-special"
                                         height="h-36"
                                         placeholder={special.description}
-                                        onChange={(e) => handleEditableChange(index, "special", e.target.value)}
+                                        onChange={(e) => handleEditableChange(index, "special", e)}
                                         disable
                                     />
                                 </div>
@@ -197,9 +217,8 @@ export default function ChildrenSelect() {
                         <TextareaBox
                             linkedFor="children-bonds"
                             height="h-[11.75rem]"
-                            blockSize
                             placeholder={childrenData.bonds}
-                            onChange={(value: string) => handleInputChange("bonds", value)} label={""}                        />
+                            onChange={(value: string) => handleInputChange("bonds", value)} label={""} />
                     </div>
                 </div>
             </div>

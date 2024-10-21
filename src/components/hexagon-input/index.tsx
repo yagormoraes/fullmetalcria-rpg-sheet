@@ -1,8 +1,8 @@
 type HexagonInputProps = {
-    label: string
-    value?: any,
-    onChange: (e: any) => void
-}
+    label: string;
+    value?: string | number | undefined;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  };
 
 export default function HexagonInput({ label, value, onChange }: HexagonInputProps) {
     return (

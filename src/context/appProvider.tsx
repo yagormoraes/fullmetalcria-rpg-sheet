@@ -1,21 +1,53 @@
 import { createContext, useState, ReactNode, FC, useContext } from "react";
 
-interface ChildrenData {
+export type Power = {
   name: string;
-  class: string;
-  room: string;
-  objects: string;
-  unique: {
-    label: string;
-    values: string;
-  };
-  powers: Array<{ name: string; description: string }>;
-  weaknesses: Array<{ name: string; description: string }>;
-  special: Array<{ name: string; description: string }>;
-  bonds: string
+  description: string;
+};
+
+export type Weakness = {
+  name: string;
+  description: string;
+};
+
+export type Special = {
+  name: string;
+  description: string;
+};
+
+export type Unique = {
+  label: string;
+  values: string;
+};
+
+export interface ChildrenData {
+  name?: string;
+  class?: string;
+  room?: string;
+  objects?: string;
+  unique: Unique;
+  powers: Power[];
+  weaknesses: Weakness[];
+  special: Special[];
+  bonds?: string;
 }
 
-interface RobotData {
+export interface Part {
+  name: string;
+  type: string;
+  memoryCost: number;
+  location?: string;
+  skill?: { name: string; description: string };
+}
+
+export interface Technique {
+  name: string;
+  type: string;
+  battery: number;
+  description: string;
+}
+
+export interface RobotData {
   name: string;
   description: string;
   class: string;
@@ -30,16 +62,18 @@ interface RobotData {
     carapaca: number;
     bateria: number;
   };
-  techs: any[];
-  parts: any[];
+  techs: Technique[]; 
+  parts: Part[]; 
 }
+
 
 interface AppContextType {
   childrenData: ChildrenData;
-  setChildrenData: (data: ChildrenData) => void;
+  setChildrenData: React.Dispatch<React.SetStateAction<ChildrenData>>;
   robotData: RobotData;
-  setRobotData: (data: RobotData) => void;
+  setRobotData: React.Dispatch<React.SetStateAction<RobotData>>;
 }
+
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -50,9 +84,9 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
     room: "",
     objects: "",
     unique: { label: "Traço único", values: "" },
-    powers: [],
-    weaknesses: [],
-    special: [],
+    powers: [] as Power[],
+    weaknesses: [] as Weakness[],
+    special: [] as Special[],
     bonds: ""
   });
 

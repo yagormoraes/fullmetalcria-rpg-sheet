@@ -7,7 +7,7 @@
                 "Lancer"
             ]
         },
-        "battery": "0",
+        "battery": 0,
         "description": "Essa é uma técnica que não necessita de Pontos de Comando para ser ativada.Enquanto estiver empunhando uma peça que seja uma arma, o Cria recebe +1 em sua Carapaça."
     },
     {
@@ -18,7 +18,7 @@
                 "Lancer"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Essa técnica é focada no Cria e na arma que ele está portando, imbuindo-a com sua energia. Quando usar essa técnica, o Cria faz um Ataque! recebendo um bônus de +1 em Mira e Dano, e reduzindo a carapaça do oponente em 1 até o final de seu próximo turno."
     },
     {
@@ -29,13 +29,13 @@
                 "Shooter"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "O Cria dispara uma sequência de projetéis como bolas de gude, pregos ou até mesmo engrenagens que sobrepujam o adversário. Você faz um Ataque! com um bônus de acerto igual a sua Velocidade + Mira."
     },
     {
         "name": "Barreira",
         "type": "Neutra",
-        "battery": "2",
+        "battery": 2,
         "description": "O Cria projeta uma barreira de energia que fornece proteção até o final do turno, recebendo um bônus de +2 em suas rolagens de Aguente! Caso gaste mais 1 Ponto de Bateria, a Barreira se expande para outro alvo, fornecendo +1 em suas rolagens de Aguente!"
     },
     {
@@ -46,31 +46,31 @@
                 "Beast"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Com essa técnica, o Cria aumenta seus atributos temporariamente. Quando usar a Fúria animal, ele recebe +1 em Dano, Velocidade e Carapaça por até o final de seu próximo turno."
     },
     {
         "name": "O melhor no que faz",
         "type": "Neutra",
-        "battery": "1",
+        "battery": 1,
         "description": "Seu Cria é o melhor no que faz, e o que ele faz não é nada bonito. O Cria faz um Ataque! com Mira +1 e ativa um Breaker com um resultado 19 ou 20. Essa técnica pode ser aprendida diversas vezes, e cada vez que o Cria aprendê-la, o número necessário para o Breaker diminui em 1. Na segunda vez que aprende-la, atinge um Breaker com 18-20 e assim por diante."
     },
     {
         "name": "Segura peão",
         "type": "Neutra",
-        "battery": "2",
+        "battery": 2,
         "description": "Se você vai pra cima com tudo, não tem quem segure! O Cria faz um Ataque! que causa Dano+2. Se ocorrer um Clash!!, ganha +1d6 na Mira."
     },
     {
         "name": "Pés pelas mãos",
         "type": "Neutra",
-        "battery": "2",
+        "battery": 2,
         "description": "O gingado da capoeira está presente até mesmo nas batalhas de Cria. Com essa técnica, um Cria converte sua Velocidade em Dano. Faça uma rolagem de Ataque! Caso acerte, cause Dano igual a sua Velocidade."
     },
     {
         "name": "Ritmo de luta",
         "type": "Neutra",
-        "battery": "2",
+        "battery": 2,
         "description": "Com essa técnica, o cria ginga no ritmo de sua música favorita, aumentando suas capacidades de luta. Recebe +1 em Mira e Velocidade até o final da próxima rodada. O custo de Pontos de Comando muda para 1 caso gaste +1 Ponto de Bateria."
     },
     {
@@ -81,7 +81,7 @@
                 "Shoto"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "As vezes um bom é tudo que você precisa. Essa técnica concentra toda energia do Cria em um potente golpe. O Cria faz uma ação de Ataque! recebendo em Mira + 1 e +2 em Dano."
     },
     {
@@ -93,7 +93,7 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "As vezes um bom é tudo que você precisa. Essa técnica concentra toda energia do Cria em um potente golpe. O Cria faz uma ação de Ataque! recebendo em Mira + 1 e +2 em Dano."
     },
     {
@@ -107,13 +107,13 @@
                 "Shooter"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Congelar a água usando a própria energia é uma técnica avançada. Os Crias que dominam-na podem congelar seus oponentes, criando uma torrente de pedras de gelo que danificam os circuitos do alvo. Com essa técnica o Cria faz um Ataque! recebendo +1 em Mira. Caso acerte, além do dano o oponente fica congelado."
     },
     {
         "name": "Correnteza",
         "type": "Água",
-        "battery": "0",
+        "battery": 0,
         "description": "Essa Técnica não gasta Pontos de Comando. Ela se torna uma propriedade do Cria, que adquire as propriedades da água em seu âmago. A água pode fluir ou poder colidir: no começo de cada turno, o Cria pode gastar 2 de Bateria para ganhar +2 em Dano ou +2 em Velocidade, até o começo do próximo turno."
     },
     {
@@ -128,7 +128,7 @@
                 "Beast"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Um golpe clássico, o soco congelante é auto explicativo. Quando usar esta técnica, o Cria faz um Ataque! que causa 1d6+1 de Dano. Role 1d6, caso o resultado seja 5 ou 6, seu oponente fica Congelado."
     },
     {
@@ -139,7 +139,7 @@
                 "Shoto"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Um golpe cortante que é capaz de estraçalhar a mais poderosa das defesas. Com essa técnica, o Cria imbui seu golpe de energia fria e acerta seu oponente. Quando usar esta técnica. Role um Ataque! que causa Dano+2."
     },
     {
@@ -151,7 +151,7 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Crias de água conseguem alterar o ambiente ao seu redor e conjurar a chuva para auxiliá-los. Com essa técnica, o Cria altera o elemento do campo de batalha para Água por 1d6 rodadas. Caso a água já seja o elemento do campo de batalha, os efeitos que o campo causa são amplificados em +1."
     },
     {
@@ -163,13 +163,13 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Tromba D’água é uma inundação que carrega tudo em seu caminho. Quando usar essa técnica o Cria faz um Ataque! convocando a correnteza e gerando uma torrente que acerta até 3 alvos Ele recebe +2 em mira e causa 1d6+2 Dano, que deve ser dividido entre os alvos."
     },
     {
         "name": "Absorver",
         "type": "Elétrica",
-        "battery": "2",
+        "battery": 2,
         "description": "O Cria tem plugues capazes de absorver energia elétrica de outros Crias. Faça um Ataque!; se acertar, você recupera 1 ponto de Bateria e o oponente perde 1d3 de Bateria."
     },
     {
@@ -190,7 +190,7 @@
                 "Lancer"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Com essa técnica, o Cria canaliza eletricidade em sua arma, lançando um feixe elétrico em direção ao oponente. Quando usar essa técnica, faça um Ataque! que causa Dano igual a Velocidade+2."
     },
     {
@@ -204,7 +204,7 @@
                 "Beast"
             ]
         },
-        "battery": "0",
+        "battery": 0,
         "description": "Essa técnica não gasta Pontos de Comando. Ela se torna uma propriedade do Cria, que adquire as propriedades do raio em seu âmago. Quando escolhê-la, o Cria recebe um bônus permanente de +1 na Velocidade, além vencer automaticamente a disputa de iniciativa na primeira rodada de uma Batalha."
     },
     {
@@ -215,7 +215,7 @@
                 "Shooter"
             ]
         },
-        "battery": "1",
+        "battery": 1,
         "description": "Um feixe de eletricidade que causa dano ao inimigo. Quando usar essa Técnica, você faz um Ataque! recebendo +1 de Mira e causando Dano +1."
     },
     {
@@ -227,13 +227,13 @@
                 "Beast"
             ]
         },
-        "battery": "4",
+        "battery": 4,
         "description": "Com essa técnica, o Cria transfere energia elétrica para seu golpe. Esse soco causa um estrondo que pode ser ouvido a centenas de metros de distância, e o Cria faz um Ataque! com +2 em Mira, causando 1d6+1 em Dano. O alvo perde 1 ponto de Bateria e deve rolar 1d6. Em 1,2 e 3, ele fica Paralisado."
     },
     {
         "name": "Onda elétrica",
         "type": "Elétrica",
-        "battery": "2",
+        "battery": 2,
         "description": "Com esse técnica, um Cria armazena sua energia elétrica e a solta em uma onda, atingindo todos os oponentes. Faça um Ataque! com +2 em Mira. Caso acerte, você deixa os alvos Paralisados durante 1 Turno."
     },
     {
@@ -247,7 +247,7 @@
                 "Prata"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Crias de fogo conseguem canalizar o poder do dragão em seu elemento. Com essa Técnica, o Cria faz um Ataque! Com +2 em Mira que causa 1d6+1 em Dano em até 3 alvos, e os deixa Em Chamas."
     },
     {
@@ -262,7 +262,7 @@
                 "Neutro"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Com essa técnica, um Cria imbuí sua arma com chamas, aumentando seu poderio destrutivo. Quando usar essa técnica, um Cria faz um Ataque recebendo +2 em Mira e causando Dano+1. Após esse ataque o Cria pode gastar 1 ponto de Bateria por Rodada para manter a arma queimando, recebendo +1 em Mira e Dano."
     },
     {
@@ -274,7 +274,7 @@
                 "Neutro"
             ]
         },
-        "battery": "0",
+        "battery": 0,
         "description": "Quando tudo parecer perdido, ainda haverá a chama da esperança. A Fagulha da Vida permite sacrificar os PV e convertê-los em bateria. Com essa técnica, o Cria recebe 1 ponto de Bateria para cada 3 Pontos de Durabilidade que gastar. Essa Técnica custa apenas 1 Ponto de Comando."
     },
     {
@@ -288,7 +288,7 @@
                 "Shooter"
             ]
         },
-        "battery": "5",
+        "battery": 5,
         "description": "Todo mundo conhece a boa e velha bola de fogo. Com essa técnica, o Cria concentra toda sua energia em um esfera flamejante que quando lançada, atinge não só o oponente, como também altera o campo de batalha. Quando usar esta técnica, faça um Ataque! recebendo Mira+2 e Causando 1d6+1 de Dano em até 2 alvos. Caso o Ataque acerte, o campo de batalha muda para o elemento fogo."
     },
     {
@@ -299,7 +299,7 @@
                 "Fogo"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "O lobo guará é uma criatura mística, e lendas dizem que ele é capaz de alterar a própria aparência e criar ilusões que confundem seus adversários. Com essa técnica, o Cria gera uma cópia ilusória de si mesmo, confundindo o oponente. Quando usar esta técnica e seu adversário fizer um Ataque, ele deverá jogar 1d6, caso obtenha o resultado 1-3, ele acerta a cópia, que se desfaz imediatamente. Uma cópia dura até 3 rodadas se não for atingida."
     },
     {
@@ -314,13 +314,13 @@
                 "Neutro"
             ]
         },
-        "battery": "4",
+        "battery": 4,
         "description": "O Soco Flamejante imbui o golpe do Cria com chamas, acertando o oponente e queimando-o. Quando usar este técnica, o Cria faz um golpe que causa 1d6+1 de Dano. Role 1d6, caso o resultado seja 4-5-6 oponente fica Em Chamas."
     },
     {
         "name": "Supernova",
         "type": "Fogo",
-        "battery": "0",
+        "battery": 0,
         "description": "Essa Técnica não gasta Pontos de Comando. Ela se torna uma propriedade do Cria, que adquire as propriedades do fogo em seu âmago. A chama intensa queima tudo que toca e não pode ser superada por outra chama. O Cria recebe Dano +1 e sua Carapaça recebe +2 contra ataques de fogo."
     },
     {
@@ -331,7 +331,7 @@
                 "Fogo"
             ]
         },
-        "battery": "0",
+        "battery": 0,
         "description": "Essa técnica não gasta Pontos de Comando.Sempre que atingir o alvo com um golpe ou uma técnica de fogo, o alvo fica Em Chamas durante toda a próxima rodada."
     },
     {
@@ -342,7 +342,7 @@
                 "Vento"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Dizem que às vezes tomar um ar é o melhor remédio. Com essa técnica, um Cria gera uma lufada refrescante de vento que remove qualquer Status de Batalha sua ou de um alvo a sua escolha."
     },
     {
@@ -356,7 +356,7 @@
                 "Ouro"
             ]
         },
-        "battery": "5",
+        "battery": 5,
         "description": "‘’Eu vou te mostrar o que é jujutsu de verdade’’ - Sukuna, Jujutsu Kaisen. Uma técnica avançada do estilo vento, o Desmantelar e Fatiar faz com que o Cria crie lâminas de vento tão velozes que são praticamente imperceptíveis ao olho nu. Quando usar essa técnica, um Cria faz um Ataque com Mira +2 que causa 1d6+3 de dano a até 3 alvos. Quando fizer esse ataque, você consegue um Breaker com 19-20 no dado."
     },
     {
@@ -368,7 +368,7 @@
                 "Neutro"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Moldar a névoa é uma habilidade muito versátil. A névoa mexe com os circuitos do Cria oponente, alterando sua percepção. Quando usar essa técnica, você cria um nevoeiro que dura 1d3 turnos (mas que é dissipado se for alvo de técnicas do tipo Vento do oponente) que causa um de -2 na Mira do alvo."
     },
     {
@@ -383,7 +383,7 @@
                 "Lancer"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Dominar o vento com sua arma é uma habilidade para poucos. O Cria usa sua arma para golpear o ar, criando duas rajadas de vento cortante. Quando usar essa técnica, um Cria faz dois Ataques, recebendo Mira +1 e Causando Dano+2 em um oponente."
     },
     {
@@ -395,13 +395,13 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Com o Redemoinho, o cria gira rapidamente usando a força cinética do corpo para gerar ventos poderosos. Quando usar essa técnica, o Cria faz um Ataque! com Mira+1 que causa Dano+2 a até 3 alvos."
     },
     {
         "name": "Vendaval",
         "type": "Vento",
-        "battery": "0",
+        "battery": 0,
         "description": "Essa Técnica não gasta Pontos de Comando. Ela se torna uma propriedade do Cria, que adquire as propriedades do vento em seu âmago. Uma folha no vento esvoaça pelo ar, intocável até chegar ao chão. Enquanto estiver No Ar, o Cria não perde Carapaça e recebe +1 em Velocidade."
     },
     {
@@ -416,7 +416,7 @@
                 "Shooter"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "Uma das mais tradicionais técnicas de vento, A Shuriken Furacão faz com que o Cria acumule vento em sua parte superior e a arremesse no adversário. Quando usar essa Técnica, o Cria faz um Ataque! com +2 em Mira e Dano. O acúmulo de energia deixa o Cria vulnerável, recebendo -1 em Carapaça até o final da próxima rodada."
     },
     {
@@ -428,7 +428,7 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "Moldar o solo como bem entende é uma das qualidades do elemento Terra. Quando usar essa técnica, o Cria acerta o campo de batalha, deixando-o escorregadio e melequento, criando areia movediça. Quando usar esta técnica, você causa uma penalidade de -2 na Velocidade do Cria alvo por 1d3 rodadas."
     },
     {
@@ -440,7 +440,7 @@
                 "Neutro"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "O melhor ataque é uma boa defesa. O Cria golpeia o solo, levantando uma parede de terra. A barreira funciona como uma reserva extra de Pontos de Durabilidade, e quando o Cria utiliza essa técnica, a barreira fornece +5 Pontos de Durabilidade que duram até a barreira ser destruída, ou seja, quando esses pontos forem zerados. Se for alvo de um Ataque, esses 5 pontos são descontados primeiro, e cada ponto de Dano que passar desses 5 é descontado diretamente da Durabilidade desse Cria."
     },
     {
@@ -455,7 +455,7 @@
                 "Beast"
             ]
         },
-        "battery": "3",
+        "battery": 3,
         "description": "A velha tática do escavar e se esconder. Com essa técnica, o Cria escava o solo, se protegendo de Ataques. Quando usar esta técnica, você fica imune a ataques de elemento que não sejam do elemento terra por uma rodada. Ao final da rodada, você sai do buraco, executando um Ataque! com bônus de +2 em Mira."
     },
     {
@@ -470,7 +470,7 @@
                 "Shooter"
             ]
         },
-        "battery": "2",
+        "battery": 2,
         "description": "‘’Primeiro vem a pedra’’ - Gon Freecs, HunterxHunter. A boa e velha pedrona. Quando usar essa técnica, o Cria faz um Ataque! com +1 em Mira e causa 1d6 de dano. Esse ataque causa um Breaker com 18-20, mas ele limita esse Breaker apenas a opção de quebrar uma peça do oponente."
     },
     {

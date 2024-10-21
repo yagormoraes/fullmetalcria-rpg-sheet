@@ -6,13 +6,12 @@ type TextareaProps = {
     placeholder?: string;
     disable?: boolean;
     height?: string;
-    onChange: (value: any) => void;
+    onChange: (value: string) => void;
     disale?: boolean
-    blockSize?: boolean
 };
 
 
-export default function TextareaBox({ label, linkedFor, height, value, onChange, placeholder, disable, blockSize }: TextareaProps) {
+export default function TextareaBox({ label, linkedFor, height, value, onChange, placeholder, disable }: TextareaProps) {
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         onChange(event.target.value);
     };

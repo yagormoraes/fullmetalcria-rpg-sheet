@@ -11,9 +11,9 @@ export default function SelectBox({
     label,
     linkedFor,
     data,
-    placeholder = "Selecione uma opção", // Placeholder padrão
+    placeholder = "Selecione uma opção",
     onChange,
-    value = "", // Valor padrão
+    value = "",
 }: SelectBoxProps) {
     return (
         <div className="flex flex-col py-1">
