@@ -43,7 +43,7 @@ export interface Part {
 export interface Technique {
   name: string;
   type: string;
-  battery: number;
+  battery: number | string;
   description: string;
 }
 
