@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={darkMode ? "dark" : ""}>
       <head>
-        <link rel="icon" type="image/png" href="/assets/favicon.png" />
+        <link rel="icon" type="image/webp" href="/assets/favicon.webp" />
         <title>Ficha Full Metal Cria</title>
       </head>
       <body className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">

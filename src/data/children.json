@@ -1,7 +1,7 @@
 [
     {
         "class": "Café com Leite",
-        "img": "/assets/pivete-cafe-com-leite.png",
+        "img": "/assets/pivete-cafe-com-leite.webp",
         "altText": "pivete-cafe-com-leite",
         "room": "Cheio de coisas para crianças mais velhas, cheio de brinquedos, etc.",
         "objects": "Boneco dos anos 80, apito, boné de uma figura mais velha, etc.",
@@ -37,7 +37,7 @@
     },
     {
         "class": "Ronin",
-        "img": "/assets/pivete-ronin.png",
+        "img": "/assets/pivete-ronin.webp",
         "altText": "pivete-ronin",
         "room": "Debaixo de uma ponte, no porão de um adulto, em uma fábrica abandonada, etc.",
         "objects": "Uma foto antiga da sua antiga criança, um animalzinho que anda com você para todo canto, uma capa maneiraça, etc.",
@@ -80,7 +80,7 @@
     },
     {
         "class": "Rebelde",
-        "img": "/assets/pivete-rebelde.png",
+        "img": "/assets/pivete-rebelde.webp",
         "altText": "pivete-rebelde",
         "room": "Cheio de posters e livros revolucionários, com várias camas, está sempre tocando musica alta, etc.",
         "objects": "Violão de nylon, livro-manifesto, walkman, etc.",
@@ -116,7 +116,7 @@
     },
     {
         "class": "Máscara",
-        "img": "/assets/pivete-mascara.png",
+        "img": "/assets/pivete-mascara.webp",
         "altText": "pivete-mascara",
         "room": "Cheio de posters de campeões de luta de cria, discreto e trancafiado, etc.",
         "objects": "Bombinhas de fumaça, capa estilosa, máscara (duh!), etc.",
@@ -156,7 +156,7 @@
     },
     {
         "class": "Cérebro",
-        "img": "/assets/pivete-cerebro.png",
+        "img": "/assets/pivete-cerebro.webp",
         "altText": "pivete-cerebro",
         "room": "Cheio de peças e com cheiro de graça, com as paredes cheias de posters de filmes dos anos 80, com partilheiras de livros organizadas por tema, etc.",
         "objects": "Um notebook velho, um caderno de anotações amassado, uma chave de fenda, etc.",
@@ -192,7 +192,7 @@
     },
     {
         "class": "Protetor",
-        "img": "/assets/pivete-protetor.png",
+        "img": "/assets/pivete-protetor.webp",
         "altText": "pivete-protetor",
         "room": "Cheio de coisas do seu irmão mais velho, um santuário em homenagem a uma lutadora famosa, organizado e certinho, etc.",
         "objects": "Um casaco grande e surrado, um cano de pvc, salgadinho para alimentar os amigos, etc.",
@@ -228,7 +228,7 @@
     },
     {
         "class": "Blogueira",
-        "img": "/assets/pivete-blogueira.png",
+        "img": "/assets/pivete-blogueira.webp",
         "altText": "pivete-blogueira",
         "room": "Cheio de revistas e posters de celebridades, o quarto é do seu computador e você só dorme ali, etc.",
         "objects": "A edição mais recente da revista Colírio, um moderno celular de flip, etc.",
@@ -268,7 +268,7 @@
     },
     {
         "class": "Esforçado",
-        "img": "/assets/pivete-esforcado.png",
+        "img": "/assets/pivete-esforcado.webp",
         "altText": "pivete-esforcado",
         "room": "Com medalhas de prata e troféus na prateleira, cheia de equipamento de treinamento, etc.",
         "objects": "Bandagem de lutador, uma medalha de participação do seu primeiro torneio, bola de futebol, etc.",
@@ -308,7 +308,7 @@
     },
     {
         "class": "Playboy",
-        "img": "/assets/pivete-playboy.png",
+        "img": "/assets/pivete-playboy.webp",
         "altText": "pivete-playboy",
         "room": "Enorme e do tamanho de uma sala de estar, cheio de coisas da sua irmã mais velha que não está mais ali, igual a um parque de diversões, etc.",
         "objects": "Um mordomo que aparece sempre que você chama, o modelo mais moderno de celular diretamente do Japão, um avião de controle remoto, etc.",
@@ -348,7 +348,7 @@
     },
     {
         "class": "Esportista",
-        "img": "/assets/pivete-esportista.png",
+        "img": "/assets/pivete-esportista.webp",
         "altText": "pivete-esportista",
         "room": "Cheio de medalhas de outro e outras premiações, lotado de pôsteres e outros itens de sua atletla favorita, repleto de coisas de nerd, que você esconde com fervor, etc.",
         "objects": "Skate, raquete de tênicos, bola de capotão, etc.",
