@@ -3,7 +3,7 @@ export default function Banner() {
         <div className="relative flex justify-center items-center overflow-hidden h-80 mx-5">
             <img
                 className="opacity-70 rounded-lg object-cover object-center w-full h-full"
-                src="/assets/banner-image.png"
+                src="/assets/banner-image.webp"
                 alt="Banner"
             />
             <div className="absolute inset-0 bg-orange-400 opacity-70 rounded-lg"></div>
@@ -20,7 +20,7 @@ export default function Banner() {
                 >
                     <div className="flex items-center space-x-2">
                         <p>BAIXE O FAST PLAY</p>
-                        <img className="h-5" src="/assets/download.png" alt="Download" />
+                        <img className="h-5" src="/assets/download.webp" alt="Download" />
                     </div>
                 </a>
             </div>
